@@ -1,0 +1,37 @@
+$mobile-width: 360px;
+$laptop-width: 768px;
+$desktop-width: 1440px;
+$mobile: 'min-width: #{$mobile-width}';
+$laptop: 'min-width: #{$laptop-width}';
+$desktop: 'min-width: #{$desktop-width}';
+$mobile-content-width: 90%;
+$laptop-content-width: 90%;
+//fonts
+$main-font: Montserrat;
+$second-font: 'Orbitron';
+//transition
+$transition: 0.3s ease-in-out;
+//colors
+$main-white: #ffffff;
+$main-black: #1e1e1e;
+$main-grey: #eeeeee;
+$good: #00CB6A;
+$error: #EB5757;
+//pack colors
+$mine: #0AD266;
+$gold: #FFD335;
+$premium: #716FFF;
+//gradients
+$mine-gradient: linear-gradient(243.71deg, #26D657 0%, #0AD266 100%);
+$gold-gradient: linear-gradient(243.71deg, #FFD439 0%, #FFD335 0.01%, #FF9950 100%);
+$premium-gradient: linear-gradient(243.71deg, #7A80FF 0%, #716FFF 100%);
+
+:export {
+  mobileWidth: $mobile-width;
+  laptopWidth: $laptop-width;
+  desktopWidth: $desktop-width;
+  mineGradient: $mine-gradient;
+  goldGradient: $gold-gradient;
+  premiumGradient: $premium-gradient;
+}
+

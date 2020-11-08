@@ -1,0 +1,18 @@
+$font-weights: ("Light": 300, "Regular": 400, "Medium": 500, "SemiBold": 600, "Bold": 700);
+@each $name, $weight in $font-weights {
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: $weight;
+    font-display: swap;
+    src: local('Montserrat'), url('~st/fonts/Montserrat-#{$name}.woff2') format('woff2'), url('~st/fonts/Montserrat-#{$name}.woff') format('woff'), url('~st/fonts/Montserrat-#{$name}.ttf') format('truetype');
+  }
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local('Orbitron'), url('~st/fonts/orbitron-v16-latin-900.woff2') format('woff2'), url('~st/fonts/orbitron-v16-latin-900.woff') format('woff'), url('~st/fonts/orbitron-v16-latin-900.ttf') format('truetype');
+}
