@@ -75,6 +75,11 @@ export default {
   width: 350px;
   padding-top: 35px;
 
+  @media ($laptop) {
+    width: 100%;
+    max-width: 350px;
+  }
+
   &__background {
     height: 250px;
     position: relative;
@@ -103,6 +108,11 @@ export default {
     top: -35px;
     left: 50%;
     transform: translateX(-50%);
+
+    @media ($laptop) {
+      top: -45px;
+      transform: translateX(-50%) scale(0.8);
+    }
   }
 
   &__info {

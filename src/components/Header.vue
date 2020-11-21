@@ -41,12 +41,23 @@ export default {
       align-items: flex-end;
       margin: 0 150px;
       text-decoration: none;
+
+      @media ($laptop) {
+        margin: 0;
+        align-items: center;
+        margin: 0 15px;
+      }
     }
 
     &__logo {
       width: 78px;
       height: 154px;
       margin-right: 15px;
+
+      @media ($laptop) {
+        width: 39px;
+        height: 78px;
+      }
     }
 
     &__logo-text {

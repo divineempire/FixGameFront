@@ -40,6 +40,10 @@ export default {
   background-color: $main-white;
   border-radius: 10px;
 
+  @media ($desktop) {
+    width: 100%;
+  }
+
   &__icon {
     width: 74px;
     height: 150px;

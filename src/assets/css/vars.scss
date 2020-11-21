@@ -1,9 +1,9 @@
 $mobile-width: 360px;
 $laptop-width: 768px;
-$desktop-width: 1440px;
-$mobile: 'min-width: #{$mobile-width}';
-$laptop: 'min-width: #{$laptop-width}';
-$desktop: 'min-width: #{$desktop-width}';
+$desktop-width: 1024px;
+$mobile: 'max-width: #{$mobile-width}';
+$laptop: 'max-width: #{$laptop-width}';
+$desktop: 'max-width: #{$desktop-width}';
 $mobile-content-width: 90%;
 $laptop-content-width: 90%;
 //fonts

@@ -95,6 +95,12 @@ export default {
   border-radius: 10px;
   background-color: $main-white;
 
+  @media ($desktop) {
+    flex-direction: column;
+    width: 77%;
+    position: fixed;
+  }
+
   &__text {
     margin: 0;
     font-family: $main-font;
@@ -106,6 +112,10 @@ export default {
     width: 59%;
     padding: 30px;
 
+    @media ($laptop) {
+      width: 100%;
+    }
+
     &__title {
       font-weight: 700;
       font-size: 36px;
@@ -113,6 +123,10 @@ export default {
       color: $main-black;
       text-align: center;
       margin: 0 0 30px;
+
+      @media ($laptop) {
+        text-align: center;
+      }
     }
 
     &__introduction {
@@ -137,6 +151,11 @@ export default {
     display: flex;
     flex-direction: column;
 
+    @media ($desktop) {
+      border-radius: 0 0 10px 10px;
+      min-height: auto;
+    }
+
     &__title {
       font-weight: bold;
       font-size: 34px;
@@ -159,6 +178,10 @@ export default {
 
     &__pack-button {
       margin-top: auto;
+
+      @media ($desktop) {
+        margin-top: 45px;
+      }
     }
 
     &__after-buy-text {
@@ -178,6 +201,11 @@ export default {
     top: -70px;
     right: -70px;
     padding: 0;
+
+    @media ($laptop) {
+      top: -25px;
+      right: -20px;
+    }
 
     &::before, &::after {
       position: absolute;

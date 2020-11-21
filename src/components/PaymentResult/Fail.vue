@@ -10,8 +10,8 @@
       При обработке платежа произошла ошибка
     </p>
     <div class="fail__controls">
-      <ColoredButton :text="toMain" @click="goToMain"/>
-      <ColoredButton :text="tryAgain" @click="tryBuyAgain"/>
+      <ColoredButton class="fail__go-to-main-button" :text="toMain" @click="goToMain"/>
+      <ColoredButton class="fail__retry-button" :text="tryAgain" @click="tryBuyAgain"/>
     </div>
   </div>
 </template>
@@ -40,9 +40,9 @@ export default {
     },
     tryBuyAgain () {
       this.tryToBuy()
-        .then(res => {
-          window.open(res.link)
-        })
+          .then(res => {
+            window.open(res.link)
+          })
     }
   }
 }
@@ -54,6 +54,10 @@ export default {
   padding: 30px;
   background-color: $main-white;
   border-radius: 10px;
+
+  @media ($desktop) {
+    width: 100%;
+  }
 
   &__icon {
     width: 106px;
@@ -86,6 +90,17 @@ export default {
   &__controls {
     display: flex;
     justify-content: space-between;
+
+    @media ($desktop) {
+      flex-direction: column;
+    }
+  }
+
+  &__go-to-main-button {
+    margin-bottom: 0;
+    @media ($desktop) {
+      margin-bottom: 25px;
+    }
   }
 }
 </style>
