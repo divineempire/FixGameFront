@@ -96,6 +96,11 @@ export default {
   background-color: $main-white;
 
   @media ($desktop) {
+    width: 77%;
+    position: fixed;
+  }
+
+  @media ($laptop) {
     flex-direction: column;
     width: 77%;
     position: fixed;
