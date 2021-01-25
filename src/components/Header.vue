@@ -2,18 +2,16 @@
   <header class="header">
     <div class="container header__container">
       <nav class="header__navigation navigation">
-        <a href="#" class="navigation__youtube-link">
+        <a href="https://www.youtube.com/channel/UCZ8fSWsoySnv1voIfi6mqwQ" class="navigation__youtube-link">
           YouTube
         </a>
         <router-link to="/" href="#" class="navigation__logo-link">
           <svg class="navigation__logo">
             <use xlink:href="#logo"/>
           </svg>
-          <p class="navigation__logo-text">
-            Fixgame
-          </p>
+
         </router-link>
-        <a href="#" class="navigation__support-link">
+        <a href="https://vk.me/fixgame_shop" class="navigation__support-link">
           Поддержка
         </a>
       </nav>

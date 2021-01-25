@@ -1,14 +1,16 @@
 <template>
   <div id="app" class="app">
-    <Header />
+    <Header/>
     <router-view class="app__body"/>
-    <Footer />
+    <Footer/>
+    <div id="vk_community_messages"></div>
   </div>
 </template>
 
 <script>
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+
 export default {
   name: 'App',
   components: {
@@ -19,6 +21,7 @@ export default {
 </script>
 <style lang="scss">
 .app {
+  background-color: $main-back;
   background-image: url('~st/images/main_back.png');
   background-repeat: no-repeat;
   background-size: cover;

@@ -27,3 +27,8 @@ export function buyProducts ({state}) {
     ]
   })
 }
+
+
+export function checkLastPurchases(ctx, payload) {
+    return this.$productsApi.checkLastPurchases(payload)
+}

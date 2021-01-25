@@ -38,4 +38,10 @@ export default class ProductsProxy extends Proxy {
       data
     })
   }
+
+  checkLastPurchases(orderId) {
+    return this.submit({
+      endpoint: `lastPurchasedValues/${orderId}`
+    })
+  }
 }

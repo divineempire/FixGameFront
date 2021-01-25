@@ -2,11 +2,17 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__links">
-        <a href="#" class="footer__link footer__youtube-link">
+        <a href="https://www.youtube.com/channel/UCZ8fSWsoySnv1voIfi6mqwQ" class="footer__link footer__youtube-link">
           YouTube
         </a>
-        <a href="#" class="footer__link footer__support-link">
+        <a href="https://vk.me/fixgame_shop" class="footer__link footer__support-link">
           Поддержка
+        </a>
+        <a href="https://vk.com/@fixgame_shop-agreement" class="footer__link footer__support-link">
+          Правила возврата
+        </a>
+        <a href="https://vk.com/@fixgame_shop-agreement" class="footer__link footer__support-link">
+          Пользовательское соглашение
         </a>
       </div>
       <p class="footer__info">
@@ -28,8 +34,9 @@ export default {
   &__links {
     margin-bottom: 20px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
   }
 
   &__link {
@@ -38,10 +45,7 @@ export default {
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
-  }
-
-  &__link:not(:last-child) {
-    margin-right: 80px;
+    margin-bottom: 10px;
   }
 
   &__info {

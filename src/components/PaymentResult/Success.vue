@@ -9,7 +9,7 @@
     <p class="success__subtitle">
       Всё прошло отлично!
     </p>
-    <Copy class="success__copy" :text="email"/>
+    <Copy class="success__copy" v-for="res in results" :key="res" :text="res"/>
     <p class="success__footer">
       Данные продублированы на почту
     </p>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapActions } from 'vuex'
 import Copy from '@/components/UI/Copy'
 
 export default {
@@ -25,9 +25,20 @@ export default {
   components: {
     Copy
   },
-  computed: {
-    ...mapState('buy', {
-      email: 'email'
+  data() {
+    return {
+      results: []
+    }
+  },
+  methods: {
+    ...mapActions('buy', {
+      checkLastPurchases: 'checkLastPurchases'
+    })
+  },
+  beforeMount() {
+    this.checkLastPurchases(this.$route.query.account.substring(5))
+    .then(res => {
+      this.results = res.values
     })
   }
 }

@@ -18,7 +18,7 @@ const store =  new Vuex.Store({
 })
 
 store.$axios = Axios.create({
-  baseURL: 'http://api.fixgame.ru'
+  baseURL: 'https://api.fixgame.ru'
 })
 
 store.$submit = function({method = 'get', data = null, query = null, url = ''}) {

@@ -1,4 +1,6 @@
 const path = require('path')
+const ImageminPlugin = require('imagemin-webpack-plugin').default
+const imageminMozjpeg = require('imagemin-mozjpeg')
 
 module.exports = {
   chainWebpack: config => {
@@ -81,5 +83,21 @@ module.exports = {
       .end()
       .use('eslint')
       .loader('eslint-loader')
+    if (process.env.NODE_ENV === 'production') {
+      config.plugin('imagemin')
+          .use(ImageminPlugin, [{
+            test: /\.(jpe?g|png)$/i,
+            pngquant: {
+              speed: 10,
+              quality: '30-50'
+            },
+            plugins: [
+              imageminMozjpeg({
+                quality: 100,
+                progressive: true
+              })
+            ]
+          }])
+    }
   }
 }

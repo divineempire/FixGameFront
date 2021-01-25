@@ -21,6 +21,7 @@ $error: #EB5757;
 $mine: #0AD266;
 $gold: #FFD335;
 $premium: #716FFF;
+$main-back: #4F80CC;
 //gradients
 $mine-gradient: linear-gradient(243.71deg, #26D657 0%, #0AD266 100%);
 $gold-gradient: linear-gradient(243.71deg, #FFD439 0%, #FFD335 0.01%, #FF9950 100%);
@@ -33,5 +34,7 @@ $premium-gradient: linear-gradient(243.71deg, #7A80FF 0%, #716FFF 100%);
   mineGradient: $mine-gradient;
   goldGradient: $gold-gradient;
   premiumGradient: $premium-gradient;
+  goodColor: $good;
+  errorColor: $error;
 }
 
