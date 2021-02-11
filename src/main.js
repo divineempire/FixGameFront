@@ -7,6 +7,9 @@ import VueMq from 'vue-mq'
 import '@/assets/css/typography.scss'
 //global classes like container etc
 import '@/assets/css/classes.scss'
+
+//newblocks
+import '@/assets/css/newblocks.scss'
 //building sprite
 const req = require.context('@/assets/icons', true)
 req.keys().forEach(function (key) {
