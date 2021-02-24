@@ -1,5 +1,75 @@
 <template>
     <div class="clean-container">
+        <section id="roulette">
+            <div class="top-back__block">
+                <img class="top-back__block-img" :src="back" alt="">
+                <p class="top-back__block-back__text">Назад</p>
+                <p class="top-back__block-title">Кейс от Фиксплея</p>
+            </div>
+            <div class="roulette-line">
+                <div class="roulette-line__stick"></div>
+                <div class="dark-background__roulette"></div>
+                <div class="roulette-line__item">
+                    <p class="roulete-line__item-text">GTA V</p>
+                </div>
+                <div class="roulette-line__item">
+                    <p class="roulete-line__item-text">GTA V</p>
+                </div>
+                <div class="roulette-line__item">
+                    <p class="roulete-line__item-text">GTA V</p>
+                </div>
+                <div class="roulette-line__item">
+                    <p class="roulete-line__item-text">GTA V</p>
+                </div>
+                <div class="roulette-line__item">
+                    <p class="roulete-line__item-text">GTA V</p>
+                </div>
+                <div class="roulette-line__item">
+                    <p class="roulete-line__item-text">GTA V</p>
+                </div>
+                <div class="roulette-line__item">
+                    <p class="roulete-line__item-text">GTA V</p>
+                </div>
+                <div class="roulette-line__item">
+                    <p class="roulete-line__item-text">GTA V</p>
+                </div>
+                <div class="roulette-line__item">
+                    <p class="roulete-line__item-text">GTA V</p>
+                </div>
+
+
+
+
+            </div>
+            <div class="roulette-form">
+                <img class="roulette-form__img" :src="rouletteFon" alt="">
+                <div class="roulette-form__description">
+                    <p class="roulette-form__description__title">Испытай свою удачу!</p>
+                    <p class="roulette-form__description__text">Принцип игры "Рулетка" основан на случайном выпадении игр. Мы не вмешиваемся в процесс розыгрыша, благодаря этому честность рулетки невозможно нарушить.</p>
+                </div>
+                <form action="" class="roulette-form__form">
+                    <div class="overlays-item__form-touch-price">
+                        <p class="overlays-item__form-touch-price__key">Цена:</p>
+                        <div class="overlays-item__form-touch-price__value">
+                            <p class="overlays-item__form-touch-price__value-last">119 ₽</p>
+                            <p class="overlays-item__form-touch-price__value-new">119 ₽</p>
+                        </div>
+                    </div>
+                    <p class="overlays-item__form-touch-text">Email</p>
+                    <input placeholder="Введите email" class="overlays-item__form-touch-input" name="email" type="text">
+                    <div class="overlays-item__form-touch__promocode-block">
+                        <p class="overlays-item__form-touch-text">Промокод</p>
+                        <input placeholder="Введите промокод" class="overlays-item__form-touch-input" name="promo" type="text">
+                        <button class="overlays-item__form-touch__promocode-block__btn">Применить</button>
+                    </div>
+                    <div class="overlays-item__form-touch__buy-block">
+                        <input typeof="number" value="1" class="overlays-item__form-touch__buy-block__input" type="text">
+                        <button :style="{background: 'linear-gradient(243.71deg, #26D657 0%, #0AD266 100%)'}">Купить за 169 ₽</button>
+
+                    </div>
+                </form>
+            </div>
+        </section>
         <h2>Все товары</h2>
         <div class="select-type__block">
 
@@ -439,6 +509,9 @@
     import gold from '../static/images/buy_form/gold.jpg'
     import mine from '../static/images/buy_form/mine.jpg'
     import premium from '../static/images/buy_form/premium.jpg'
+    import back from '../static/images/newblock/back.svg'
+    import fifa from '../static/images/newblock/fifa.png'
+    import rouletteFon from '../static/images/newblock/roulette-fon.png'
 
     export default {
         name: 'NewBlocks',
@@ -448,7 +521,10 @@
                 sale,
                 gold,
                 mine,
-                premium
+                premium,
+                back,
+                fifa,
+                rouletteFon
             }
         },
         methods: {
