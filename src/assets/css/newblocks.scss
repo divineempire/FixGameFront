@@ -713,5 +713,60 @@
   }
 }
 
+.main__list{
+  position: relative;
+  display: flex;
+}
+
+
+
+#background-light1{
+  width: 31rem;
+  position: absolute;
+  left: -20%;
+  z-index: 1;
+}
+
+#background-light2{
+  width: 31rem;
+  position: absolute;
+  left: 32%;
+  top: 73%;
+  z-index: 1;
+}
+
+#background-light3{
+  width: 31rem;
+  position: absolute;
+  left: 88%;
+  z-index: 1;
+}
+
+.main__item{
+  z-index: 3;
+
+}
+
+
+
+.background-light{
+  transition: 0.3s;
+  opacity: 1;
+
+}
+
+
+
+
+
+body{
+  overflow: hidden;
+}
+
+
+
+
+
+
 
 
