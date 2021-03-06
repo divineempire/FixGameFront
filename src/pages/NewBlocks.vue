@@ -88,14 +88,10 @@
         </div>
         <div class="mini-games__container">
             <div class="mini-games__container-item">
-
                 <p class="mini-games__container-item__name">Rainbow Six: Siege</p>
-
                     <button type="button" class="mini-games__container-item__button">
                         <p class="mini-games__container-item__button-text">Купить за 119 ₽</p>
                     </button>
-
-
             </div>
             <div class="mini-games__container-item">
 
@@ -462,7 +458,6 @@
                         </div>
                         <p class="overlays-item__form-touch-text">Гарантия</p>
                         <div class="overlays-item__form-touch-type">
-
                             <img class="overlays-item__form-touch-type__sale" :src="sale" alt="">
                             <div @click="changeGaranty()" class="overlays-item__form-touch-type__item active-touch__type">
                                 <div class="select-type"></div>
@@ -498,6 +493,12 @@
 
             </div>
         </section>
+
+
+
+        <section class="case-container">
+
+        </section>
     </div>
 </template>
 
@@ -528,9 +529,7 @@
             }
         },
         methods: {
-
             changeCategory: function(){
-
                 //let categoryBackground = document.querySelectorAll('.select-border')
                 let category = document.querySelectorAll('.select-type__block-item')
                 for (let i=0; i<category.length; i++){
@@ -590,6 +589,173 @@
                         }
                     }
                 }
+            },
+            productRequest(){
+                let request = new XMLHttpRequest()
+                request.open('GET', 'https://api.fixgame.ru/api/productGroups', false)
+                request.send()
+                if (request.status === 200) {
+                    let subjectsRequest = JSON.parse(request.response)
+
+                    return(subjectsRequest)
+                } else {
+                    console.log('Error')
+                }
+            }
+        },
+        mounted() {
+            let products = this.productRequest()
+            let caseContainer = document.querySelector('.case-container')
+                console.log(products)
+            for (let i=0; i<products.length; i++){
+                let product = document.createElement('div')
+                product.className = 'overlays-item'
+                let productDescriptionBlock = document.createElement('div')
+                productDescriptionBlock.className = 'overlays-item__description'
+                let productDescriptionBlockTitle = document.createElement('p')
+                productDescriptionBlockTitle.className = 'overlays-item__description-title'
+                productDescriptionBlockTitle.innerText = products[i].products[0].displayName
+                let productDescriptionBlockText = document.createElement('p')
+                productDescriptionBlockText.className = 'overlays-item__description-text'
+                productDescriptionBlockText.innerText = products[i].products[0].description
+                let productForm = document.createElement('form')
+                productForm.className = 'overlays-item__form'
+                productForm.style.background = 'linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0.1) 100%), url('+products[i].meta.slice(10, products[i].meta.length-1)+') 100% 100% no-repeat'
+                productForm.style.backgroundSize = 'cover'
+                let closeBtn = document.createElement('div')
+                closeBtn.className = 'close-btn'
+
+                let closeBtnItem1 = document.createElement('span')
+                closeBtnItem1.className = 'close-btn__item'
+                let closeBtnItem2 = document.createElement('span')
+                closeBtnItem2.className = 'close-btn__item'
+                closeBtn.appendChild(closeBtnItem1)
+                closeBtn.appendChild(closeBtnItem2)
+
+                let overlaysTouch = document.createElement('div')
+                overlaysTouch.className = 'overlays-item__form-touch'
+                let overlaysTouchPrice = document.createElement('div')
+                overlaysTouchPrice.className = 'overlays-item__form-touch-price'
+                let overlaysTouchPriceKey = document.createElement('p')
+                overlaysTouchPriceKey.className = 'overlays-item__form-touch-price__key'
+                overlaysTouchPriceKey.innerText = 'Цена:'
+                let overlaysTouchPriceValue = document.createElement('div')
+                overlaysTouchPriceValue.className = 'overlays-item__form-touch-price__value'
+                let overlaysTouchPriceValueLast = document.createElement('p')
+                overlaysTouchPriceValueLast.className = 'overlays-item__form-touch-price__value-last'
+                overlaysTouchPriceValueLast.innerText = products[i].products[0].prePrice + ' ₽'
+                let overlaysTouchPriceValueNew = document.createElement('p')
+                overlaysTouchPriceValueNew.className = 'overlays-item__form-touch-price__value-new'
+                overlaysTouchPriceValueNew.innerText = products[i].products[0].price + ' ₽'
+                let overlaysTouchText = document.createElement('p')
+                overlaysTouchText.className = 'overlays-item__form-touch-text'
+                overlaysTouchText.innerText = 'Гарантия'
+                let overlaysTouchType = document.createElement('div')
+                overlaysTouchType.className = 'overlays-item__form-touch-type'
+                let overlaysTouchTypeImg = document.createElement('img')
+                overlaysTouchTypeImg.className = 'overlays-item__form-touch-type__sale'
+                overlaysTouchTypeImg.src = ''
+                //-----------------------------------------------------------------------------
+                let overlaysTouchTypeItem1 = document.createElement('div')
+                overlaysTouchTypeItem1.className = 'overlays-item__form-touch-type__item'
+                let selectType1 = document.createElement('div')
+                selectType1.className = 'select-type'
+                let overlaysTouchTypeItemText1 = document.createElement('p')
+                overlaysTouchTypeItemText1.className = 'overlays-item__form-touch-type__item-text'
+                overlaysTouchTypeItemText1.innerText = 'Без'
+                //-----------------------------------------------------------------------------
+                let overlaysTouchTypeItem2 = document.createElement('div')
+                overlaysTouchTypeItem2.className = 'overlays-item__form-touch-type__item'
+                let selectType2 = document.createElement('div')
+                selectType2.className = 'select-type'
+                let overlaysTouchTypeItemText2 = document.createElement('p')
+                overlaysTouchTypeItemText2.className = 'overlays-item__form-touch-type__item-text'
+                overlaysTouchTypeItemText2.innerText = 'Неделя'
+                //-----------------------------------------------------------------------------
+                let overlaysTouchTypeItem3 = document.createElement('div')
+                overlaysTouchTypeItem3.className = 'overlays-item__form-touch-type__item'
+                let selectType3 = document.createElement('div')
+                selectType3.className = 'select-type'
+                let overlaysTouchTypeItemText3 = document.createElement('p')
+                overlaysTouchTypeItemText3.className = 'overlays-item__form-touch-type__item-text'
+                overlaysTouchTypeItemText3.innerText = 'Месяц'
+                //-----------------------------------------------------------------------------
+                let overlaysTouchTypeItem4 = document.createElement('div')
+                overlaysTouchTypeItem4.className = 'overlays-item__form-touch-type__item'
+                let selectType4 = document.createElement('div')
+                selectType4.className = 'select-type'
+                let overlaysTouchTypeItemText4 = document.createElement('p')
+                overlaysTouchTypeItemText4.className = 'overlays-item__form-touch-type__item-text'
+                overlaysTouchTypeItemText4.innerText = 'Год'
+                //-----------------------------------------------------------------------------
+                let overlaysItemEmailText = document.createElement('p')
+                overlaysItemEmailText.className = 'overlays-item__form-touch-text'
+                overlaysItemEmailText.innerText = 'Email'
+                let inputEmail = document.createElement('input')
+                inputEmail.className = 'overlays-item__form-touch-input'
+                inputEmail.placeholder = 'Введите email'
+                inputEmail.name = 'email'
+                inputEmail.type = 'text'
+                let overlaysPromocodeBlock = document.createElement('div')
+                overlaysPromocodeBlock.className = 'overlays-item__form-touch__promocode-block'
+                let overlaysItemPromoText = document.createElement('p')
+                overlaysItemPromoText.className = 'overlays-item__form-touch-text'
+                overlaysItemPromoText.innerText = 'Промокод'
+                let inputPromo = document.createElement('input')
+                inputPromo.className = 'overlays-item__form-touch-input'
+                inputPromo.placeholder = 'Введите промокод'
+                inputPromo.name = 'promo'
+                inputPromo.type = 'text'
+                let formButton = document.createElement('button')
+                formButton.className = 'overlays-item__form-touch__promocode-block__btn'
+                formButton.innerText = 'Применить'
+                let overlaysItemBuyBlock = document.createElement('div')
+                overlaysItemBuyBlock.className = 'overlays-item__form-touch__buy-block'
+                let inputBuy = document.createElement('input')
+                inputBuy.className = 'overlays-item__form-touch__buy-block__input'
+                inputBuy.type = 'number'
+                inputBuy.value = 1
+                let buyBtn = document.createElement('button')
+                buyBtn.style.background = 'linear-gradient(243.71deg, #26D657 0%, #0AD266 100%)'
+                buyBtn.innerText = 'Купить за'+products[i].products[0].price+' ₽'
+
+                product.appendChild(productDescriptionBlock)
+                productDescriptionBlock.appendChild(productDescriptionBlockTitle)
+                productDescriptionBlock.appendChild(productDescriptionBlockText)
+                product.appendChild(productForm)
+                productForm.appendChild(closeBtn)
+                productForm.appendChild(overlaysTouch)
+                overlaysTouch.appendChild(overlaysTouchPrice)
+                overlaysTouchPrice.appendChild(overlaysTouchPriceKey)
+                overlaysTouchPrice.appendChild(overlaysTouchPriceValue)
+                overlaysTouchPriceValue.appendChild(overlaysTouchPriceValueLast)
+                overlaysTouchPriceValue.appendChild(overlaysTouchPriceValueNew)
+                overlaysTouch.appendChild(overlaysTouchText)
+                overlaysTouch.appendChild(overlaysTouchType)
+                overlaysTouchType.appendChild(overlaysTouchTypeImg)
+                overlaysTouchTypeItem1.appendChild(selectType1)
+                overlaysTouchTypeItem1.appendChild(overlaysTouchTypeItemText1)
+                overlaysTouchTypeItem2.appendChild(selectType2)
+                overlaysTouchTypeItem2.appendChild(overlaysTouchTypeItemText2)
+                overlaysTouchTypeItem3.appendChild(selectType3)
+                overlaysTouchTypeItem3.appendChild(overlaysTouchTypeItemText3)
+                overlaysTouchTypeItem4.appendChild(selectType4)
+                overlaysTouchTypeItem4.appendChild(overlaysTouchTypeItemText4)
+                overlaysTouchType.appendChild(overlaysTouchTypeItem1)
+                overlaysTouchType.appendChild(overlaysTouchTypeItem2)
+                overlaysTouchType.appendChild(overlaysTouchTypeItem3)
+                overlaysTouchType.appendChild(overlaysTouchTypeItem4)
+                overlaysTouch.appendChild(overlaysItemEmailText)
+                overlaysTouch.appendChild(inputEmail)
+                overlaysTouch.appendChild(overlaysPromocodeBlock)
+                overlaysPromocodeBlock.appendChild(overlaysItemPromoText)
+                overlaysPromocodeBlock.appendChild(inputPromo)
+                overlaysPromocodeBlock.appendChild(formButton)
+                overlaysTouch.appendChild(overlaysItemBuyBlock)
+                overlaysItemBuyBlock.appendChild(inputBuy)
+                overlaysItemBuyBlock.appendChild(buyBtn)
+                caseContainer.appendChild(product)
+
             }
         }
     }

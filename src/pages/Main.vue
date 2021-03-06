@@ -42,7 +42,11 @@ export default {
     openForm (type, pack) {
       this.setCurrentAccountToBuy(pack)
       this.formType = type
-    }
+    },
+
+  },
+  mounted() {
+
   },
   computed: {
     ...mapState('packs', {

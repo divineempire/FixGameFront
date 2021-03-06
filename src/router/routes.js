@@ -6,7 +6,8 @@ export default [
   {
     path: '/',
     name: 'main',
-    component: Main
+    component: Main,
+
   },
   {
     path: '/NewBlocks',
@@ -31,3 +32,5 @@ export default [
     ]
   }
 ]
+
+
