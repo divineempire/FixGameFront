@@ -170,328 +170,85 @@
             </div>
         </div>
         <section id="overlays">
-            <div class="overlays-item">
-                <div class="overlays-item__description">
-                    <p class="overlays-item__description-title">
-                        Ключ Rainbow Six: Siege Standart
-                    </p>
-                    <p class="overlays-item__description-text">
-                        Мгновенно после оплаты и со скидками вы получаете лицензионный ключ активации на полноценную версию UPLAY игры Tom Clancy´s Rainbow Six: Siege. Это НЕ урезанная стартер-версия.
-                    </p>
-                    <p class="overlays-item__description-text">
-                        «Tom Clancy’s Rainbow Six® Осада» – новая часть всемирно известной серии шутеров от первого лица, разработанная Ubisoft Montreal для консолей нового поколения и PC. В основе сюжета игры лежит борьба с терроризмом по всему миру. В «Tom Clancy’s Rainbow Six Осада» вы сможете в полной мере приобщиться к искусству разрушения. Вас ждут напряженные бои с постоянным риском для жизни, возможность командной игры и, конечно, сложнейшие операции. Одна ошибка – и все взлетит на воздух! Сетевой режим выводит жаркие перестрелки и тактическое планирование на новый уровень в лучших традициях серии «Tom Clancy’s Rainbow Six».
-                    </p>
-                    <p class="overlays-item__description-text">
-                        Станьте агентом по борьбе с мировым терроризмом, мастером ведения боя на коротких дистанциях и специалистом по захвату стратегически важных объектов. Издание «Tom Clancy’s Rainbow Six® Осада» «Тактика осады» предоставит вам массу возможностей отточить тактические навыки и лично возглавить спасательную операцию или атаку на неприятеля.
-                    </p>
-                    <p class="overlays-item__description-text">
-                        Активации ключа:
-                        <ul>
-                            <li>Если не установлен Uplay клиент, скачайте и установите его . (http://uplay.ubi.com/)</li>
-                            <li>Войдите в свой аккаунт Uplay или зарегистрируйте новый, если у вас его еще нет.</li>
-                            <li>Нажмите на изображение «Шестерёнки» и выберите «Активировать продукт».</li>
-                            <li>Введите ключ активации (для его получения необходимо купить Tom Clancys Rainbow Six:Siege).</li>
-                            <li>После этого игра отобразится в библиотеке игр и вы сможете скачать Tom Clancys Rainbow Six:Siege.</li>
-                        </ul>
-                    </p>
-                </div>
-                <form class="overlays-item__form" :style="{background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0.1) 100%), url('+reddead+') 100% 100% no-repeat', backgroundSize: 'cover'}">
-                    <div class="close-btn">
-                        <span class="close-btn__item"></span>
-                        <span class="close-btn__item"></span>
-                    </div>
-                    <div class="overlays-item__form-touch">
-                        <div class="overlays-item__form-touch-price">
-                            <p class="overlays-item__form-touch-price__key">Цена:</p>
-                            <div class="overlays-item__form-touch-price__value">
-                                <p class="overlays-item__form-touch-price__value-last">119 ₽</p>
-                                <p class="overlays-item__form-touch-price__value-new">119 ₽</p>
-                            </div>
-                        </div>
-                        <p class="overlays-item__form-touch-text">Гарантия</p>
-                        <div class="overlays-item__form-touch-type">
-
-                            <img class="overlays-item__form-touch-type__sale" :src="sale" alt="">
-                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item active-touch__type">
-                                <div class="select-type"></div>
-                                <p class="overlays-item__form-touch-type__item-text ">Без</p>
-                            </div>
-                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item">
-                                <div class="select-type"></div>
-                                <p class="overlays-item__form-touch-type__item-text ">Неделя</p>
-                            </div>
-                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item">
-                                <div class="select-type"></div>
-                                <p class="overlays-item__form-touch-type__item-text ">Месяц</p>
-                            </div>
-                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item">
-                                <div class="select-type"></div>
-                                <p class="overlays-item__form-touch-type__item-text ">Год</p>
-                            </div>
-                        </div>
-                        <p class="overlays-item__form-touch-text">Email</p>
-                        <input placeholder="Введите email" class="overlays-item__form-touch-input" name="email" type="text">
-                        <div class="overlays-item__form-touch__promocode-block">
-                            <p class="overlays-item__form-touch-text">Промокод</p>
-                            <input placeholder="Введите промокод" class="overlays-item__form-touch-input" name="promo" type="text">
-                            <button class="overlays-item__form-touch__promocode-block__btn">Применить</button>
-                        </div>
-                        <div class="overlays-item__form-touch__buy-block">
-                            <input typeof="number" value="1" class="overlays-item__form-touch__buy-block__input" type="text">
-                            <button :style="{background: '#FF5001'}">Купить за 169 ₽</button>
-
-                        </div>
-                    </div>
-                </form>
-
-            </div>
-            <div class="overlays-item">
-                <div class="overlays-item__description">
-                    <p class="overlays-item__description-title">
-                        Minecraft PREMIUM
-                    </p>
-                    <p class="overlays-item__description-text">
-                        Приобретая данный товар Вы моментально получаете лицензионный аккаунт Minecraft.
-                    </p>
-                    <p class="overlays-item__description-text">
-                        Возможности товара:
-                    </p>
-                    <ul>
-                        <li>Возможность играть на Premium серверах</li>
-                        <li>Возможность смены ника на аккаунте</li>
-                        <li>Возможность смены скина на аккаунте</li>
-                        <li>Играть с модами на серверах</li>
-                    </ul>
-                    <p class="overlays-item__description-text">
-                        Дополнительная информация:
-                    </p>
-                    <ul>
-                        <li>Как изменить Никнейм<br>
-                            Переходим на сайт mojang.com<br>
-                            Смотрим на строчку Minecraft<br>
-                            Возле ника видим кнопку "Change"<br>
-                            Вводим свой новый ник.</li>
-                    </ul>
-                    <p class="overlays-item__description-text">
-                        Как изменить Скин:
-                    </p>
-                    <ul>
-                        <li>Переходим на сайт minecraft.net<br>
-                            Проходим авторизацию с помощью купленных у нас данных<br>
-                            Далее в верхнем правом углу нажимаем на Ваш логин<br>
-                            Выбираем пункт "PROFILE"<br>
-                            Видим строку с выбором скина - выбираем скин.<br>
-                            Нажимаем внизу на кнопку "Reset skin"</li>
-                    </ul>
 
 
-                </div>
-                <form class="overlays-item__form" :style="{background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0.1) 100%), url('+premium+') 100% 100% no-repeat', backgroundSize: 'cover'}">
-                    <div class="close-btn">
-                        <span class="close-btn__item"></span>
-                        <span class="close-btn__item"></span>
-                    </div>
-                    <div class="overlays-item__form-touch">
-                        <div class="overlays-item__form-touch-price">
-                            <p class="overlays-item__form-touch-price__key">Цена:</p>
-                            <div class="overlays-item__form-touch-price__value">
-                                <p class="overlays-item__form-touch-price__value-last">119 ₽</p>
-                                <p class="overlays-item__form-touch-price__value-new">119 ₽</p>
-                            </div>
-                        </div>
-                        <p class="overlays-item__form-touch-text">Гарантия</p>
-                        <div class="overlays-item__form-touch-type">
-
-                            <img class="overlays-item__form-touch-type__sale" :src="sale" alt="">
-                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item active-touch__type">
-                                <div class="select-type"></div>
-                                <p class="overlays-item__form-touch-type__item-text ">Без</p>
-                            </div>
-                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item">
-                                <div class="select-type"></div>
-                                <p class="overlays-item__form-touch-type__item-text ">Неделя</p>
-                            </div>
-                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item">
-                                <div class="select-type"></div>
-                                <p class="overlays-item__form-touch-type__item-text ">Месяц</p>
-                            </div>
-                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item">
-                                <div class="select-type"></div>
-                                <p class="overlays-item__form-touch-type__item-text ">Год</p>
-                            </div>
-                        </div>
-                        <p class="overlays-item__form-touch-text">Email</p>
-                        <input placeholder="Введите email" class="overlays-item__form-touch-input" name="email" type="text">
-                        <div class="overlays-item__form-touch__promocode-block">
-                            <p class="overlays-item__form-touch-text">Промокод</p>
-                            <input placeholder="Введите промокод" class="overlays-item__form-touch-input" name="promo" type="text">
-                            <button class="overlays-item__form-touch__promocode-block__btn">Применить</button>
-                        </div>
-                        <div class="overlays-item__form-touch__buy-block">
-                            <input typeof="number" value="1" class="overlays-item__form-touch__buy-block__input" type="text">
-                            <button>Купить за 169 ₽</button>
-
-                        </div>
-                    </div>
-                </form>
-
-            </div>
-            <div class="overlays-item">
-                <div class="overlays-item__description">
-                    <p class="overlays-item__description-title">
-                        Minecraft GOLD
-                    </p>
-                    <p class="overlays-item__description-text">
-                        Приобретая данный товар Вы моментально получаете лицензионный аккаунт Minecraft.
-                    </p>
-                    <p class="overlays-item__description-text">
-                        Minecraft — компьютерная инди-игра в жанре песочницы с элементами симулятора выживания и открытым миром, разработанная шведским программистом Маркусом Перссоном, известным также как «Notch» и позже выпускаемая основанной Перссоном компанией Mojang.
-                    </p>
-                    <p class="overlays-item__description-text">
-                        Возможности товара:
-                    </p>
-                    <ul>
-                        <li>Возможность играть на Premium серверах</li>
-                        <li>Возможность смены скина на аккаунте</li>
-                        <li>Играть с модами на серверах</li>
-                    </ul>
-                    <p class="overlays-item__description-text">
-                        Менять пароль и ник запрещено.
-                    </p>
-                    <p class="overlays-item__description-text">
-                        При смене этих данных Вы лишаетесь любой гарантии от магазина.
-                    </p>
+<!--            <div class="overlays-item">-->
+<!--                <div class="overlays-item__description">-->
+<!--                    <p class="overlays-item__description-title">-->
+<!--                        Minecraft-->
+<!--                    </p>-->
 
 
-                </div>
-                <form class="overlays-item__form" :style="{background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0.1) 100%), url('+gold+') 100% 100% no-repeat', backgroundSize: 'cover'}">
-                    <div class="close-btn">
-                        <span class="close-btn__item"></span>
-                        <span class="close-btn__item"></span>
-                    </div>
-                    <div class="overlays-item__form-touch">
-                        <div class="overlays-item__form-touch-price">
-                            <p class="overlays-item__form-touch-price__key">Цена:</p>
-                            <div class="overlays-item__form-touch-price__value">
-                                <p class="overlays-item__form-touch-price__value-last">119 ₽</p>
-                                <p class="overlays-item__form-touch-price__value-new">119 ₽</p>
-                            </div>
-                        </div>
-                        <p class="overlays-item__form-touch-text">Гарантия</p>
-                        <div class="overlays-item__form-touch-type">
+<!--                    <p class="overlays-item__description-text">-->
+<!--                        Приобретая данный товар Вы моментально получаете лицензионный аккаунт Minecraft.-->
+<!--                    </p>-->
+<!--                    <p class="overlays-item__description-text">-->
+<!--                        Minecraft — компьютерная инди-игра в жанре песочницы с элементами симулятора выживания и открытым миром, разработанная шведским программистом Маркусом Перссоном, известным также как «Notch» и позже выпускаемая основанной Перссоном компанией Mojang.-->
+<!--                    </p>-->
+<!--                    <p class="overlays-item__description-text">-->
+<!--                        Возможности товара:-->
+<!--                    </p>-->
+<!--                    <ul>-->
+<!--                        <li>Возможность играть на Premium серверах</li>-->
+<!--                        <li>Играть с модами на серверах</li>-->
+<!--                    </ul>-->
+<!--                    <p class="overlays-item__description-text">-->
+<!--                        Менять пароль и ник запрещено.-->
+<!--                    </p>-->
+<!--                    <p class="overlays-item__description-text">-->
+<!--                        При смене этих данных Вы лишаетесь любой гарантии от магазина.-->
+<!--                    </p>-->
 
-                            <img class="overlays-item__form-touch-type__sale" :src="sale" alt="">
-                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item active-touch__type">
-                                <div class="select-type"></div>
-                                <p class="overlays-item__form-touch-type__item-text ">Без</p>
-                            </div>
-                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item">
-                                <div class="select-type"></div>
-                                <p class="overlays-item__form-touch-type__item-text ">Неделя</p>
-                            </div>
-                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item">
-                                <div class="select-type"></div>
-                                <p class="overlays-item__form-touch-type__item-text ">Месяц</p>
-                            </div>
-                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item">
-                                <div class="select-type"></div>
-                                <p class="overlays-item__form-touch-type__item-text ">Год</p>
-                            </div>
-                        </div>
-                        <p class="overlays-item__form-touch-text">Email</p>
-                        <input placeholder="Введите email" class="overlays-item__form-touch-input" name="email" type="text">
-                        <div class="overlays-item__form-touch__promocode-block">
-                            <p class="overlays-item__form-touch-text">Промокод</p>
-                            <input placeholder="Введите промокод" class="overlays-item__form-touch-input" name="promo" type="text">
-                            <button class="overlays-item__form-touch__promocode-block__btn">Применить</button>
-                        </div>
-                        <div class="overlays-item__form-touch__buy-block">
-                            <input typeof="number" value="1" class="overlays-item__form-touch__buy-block__input" type="text">
-                            <button :style="{background: 'linear-gradient(243.71deg, #FFD439 0%, #FFD335 0.01%, #FF9950 100%)'}">Купить за 169 ₽</button>
+<!--                </div>-->
+<!--                <form class="overlays-item__form" :style="{background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0.1) 100%), url('+mine+') 100% 100% no-repeat', backgroundSize: 'cover'}">-->
+<!--                    <div class="close-btn">-->
+<!--                        <span class="close-btn__item"></span>-->
+<!--                        <span class="close-btn__item"></span>-->
+<!--                    </div>-->
+<!--                    <div class="overlays-item__form-touch">-->
+<!--                        <div class="overlays-item__form-touch-price">-->
+<!--                            <p class="overlays-item__form-touch-price__key">Цена:</p>-->
+<!--                            <div class="overlays-item__form-touch-price__value">-->
+<!--                                <p class="overlays-item__form-touch-price__value-last">119 ₽</p>-->
+<!--                                <p class="overlays-item__form-touch-price__value-new">119 ₽</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <p class="overlays-item__form-touch-text">Гарантия</p>-->
+<!--                        <div class="overlays-item__form-touch-type">-->
+<!--                            <img class="overlays-item__form-touch-type__sale" :src="sale" alt="">-->
+<!--                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item active-touch__type">-->
+<!--                                <div class="select-type"></div>-->
+<!--                                <p class="overlays-item__form-touch-type__item-text ">Без</p>-->
+<!--                            </div>-->
+<!--                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item">-->
+<!--                                <div class="select-type"></div>-->
+<!--                                <p class="overlays-item__form-touch-type__item-text ">Неделя</p>-->
+<!--                            </div>-->
+<!--                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item">-->
+<!--                                <div class="select-type"></div>-->
+<!--                                <p class="overlays-item__form-touch-type__item-text ">Месяц</p>-->
+<!--                            </div>-->
+<!--                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item">-->
+<!--                                <div class="select-type"></div>-->
+<!--                                <p class="overlays-item__form-touch-type__item-text ">Год</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <p class="overlays-item__form-touch-text">Email</p>-->
+<!--                        <input placeholder="Введите email" class="overlays-item__form-touch-input" name="email" type="text">-->
+<!--                        <div class="overlays-item__form-touch__promocode-block">-->
+<!--                            <p class="overlays-item__form-touch-text">Промокод</p>-->
+<!--                            <input placeholder="Введите промокод" class="overlays-item__form-touch-input" name="promo" type="text">-->
+<!--                            <button class="overlays-item__form-touch__promocode-block__btn">Применить</button>-->
+<!--                        </div>-->
+<!--                        <div class="overlays-item__form-touch__buy-block">-->
+<!--                            <input typeof="number" value="1" class="overlays-item__form-touch__buy-block__input" type="text">-->
+<!--                            <button :style="{background: 'linear-gradient(243.71deg, #26D657 0%, #0AD266 100%)'}">Купить за 169 ₽</button>-->
 
-                        </div>
-                    </div>
-                </form>
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </form>-->
 
-            </div>
-
-            <div class="overlays-item">
-                <div class="overlays-item__description">
-                    <p class="overlays-item__description-title">
-                        Minecraft
-                    </p>
-
-
-                    <p class="overlays-item__description-text">
-                        Приобретая данный товар Вы моментально получаете лицензионный аккаунт Minecraft.
-                    </p>
-                    <p class="overlays-item__description-text">
-                        Minecraft — компьютерная инди-игра в жанре песочницы с элементами симулятора выживания и открытым миром, разработанная шведским программистом Маркусом Перссоном, известным также как «Notch» и позже выпускаемая основанной Перссоном компанией Mojang.
-                    </p>
-                    <p class="overlays-item__description-text">
-                        Возможности товара:
-                    </p>
-                    <ul>
-                        <li>Возможность играть на Premium серверах</li>
-                        <li>Играть с модами на серверах</li>
-                    </ul>
-                    <p class="overlays-item__description-text">
-                        Менять пароль и ник запрещено.
-                    </p>
-                    <p class="overlays-item__description-text">
-                        При смене этих данных Вы лишаетесь любой гарантии от магазина.
-                    </p>
-
-                </div>
-                <form class="overlays-item__form" :style="{background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0.1) 100%), url('+mine+') 100% 100% no-repeat', backgroundSize: 'cover'}">
-                    <div class="close-btn">
-                        <span class="close-btn__item"></span>
-                        <span class="close-btn__item"></span>
-                    </div>
-                    <div class="overlays-item__form-touch">
-                        <div class="overlays-item__form-touch-price">
-                            <p class="overlays-item__form-touch-price__key">Цена:</p>
-                            <div class="overlays-item__form-touch-price__value">
-                                <p class="overlays-item__form-touch-price__value-last">119 ₽</p>
-                                <p class="overlays-item__form-touch-price__value-new">119 ₽</p>
-                            </div>
-                        </div>
-                        <p class="overlays-item__form-touch-text">Гарантия</p>
-                        <div class="overlays-item__form-touch-type">
-                            <img class="overlays-item__form-touch-type__sale" :src="sale" alt="">
-                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item active-touch__type">
-                                <div class="select-type"></div>
-                                <p class="overlays-item__form-touch-type__item-text ">Без</p>
-                            </div>
-                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item">
-                                <div class="select-type"></div>
-                                <p class="overlays-item__form-touch-type__item-text ">Неделя</p>
-                            </div>
-                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item">
-                                <div class="select-type"></div>
-                                <p class="overlays-item__form-touch-type__item-text ">Месяц</p>
-                            </div>
-                            <div @click="changeGaranty()" class="overlays-item__form-touch-type__item">
-                                <div class="select-type"></div>
-                                <p class="overlays-item__form-touch-type__item-text ">Год</p>
-                            </div>
-                        </div>
-                        <p class="overlays-item__form-touch-text">Email</p>
-                        <input placeholder="Введите email" class="overlays-item__form-touch-input" name="email" type="text">
-                        <div class="overlays-item__form-touch__promocode-block">
-                            <p class="overlays-item__form-touch-text">Промокод</p>
-                            <input placeholder="Введите промокод" class="overlays-item__form-touch-input" name="promo" type="text">
-                            <button class="overlays-item__form-touch__promocode-block__btn">Применить</button>
-                        </div>
-                        <div class="overlays-item__form-touch__buy-block">
-                            <input typeof="number" value="1" class="overlays-item__form-touch__buy-block__input" type="text">
-                            <button :style="{background: 'linear-gradient(243.71deg, #26D657 0%, #0AD266 100%)'}">Купить за 169 ₽</button>
-
-                        </div>
-                    </div>
-                </form>
-
-            </div>
+<!--            </div>-->
         </section>
 
 
@@ -529,7 +286,7 @@
             }
         },
         methods: {
-            changeCategory: function(){
+            changeCategory(){
                 //let categoryBackground = document.querySelectorAll('.select-border')
                 let category = document.querySelectorAll('.select-type__block-item')
                 for (let i=0; i<category.length; i++){
@@ -556,35 +313,120 @@
                 }
             },
 
-            changeGaranty: function(){
+            changeGaranty(){
                 let forms = document.querySelectorAll('.overlays-item__form')
+                let modal = document.querySelectorAll('.overlays-item')
+                let getTitles = function(e){
+                    let getTitlesArr = []
+                    for (let a=0; a<modal.length; a++){
+                        let modalTitles = modal[e].querySelectorAll('.overlays-item__description-title')
+                        getTitlesArr.push(modalTitles)
+
+                    }
+                    return getTitlesArr
+                }
+                let getTexts = function(e){
+                    let getTitlesArr = []
+                    for (let a=0; a<modal.length; a++){
+                        let modalText = modal[e].querySelectorAll('.overlays-item__description-text')
+                        getTitlesArr.push(modalText)
+
+                    }
+                    return getTitlesArr
+                }
+
+
                 for (let i=0; i<forms.length; i++){
                     let formsChangeGaranty = forms[i].querySelectorAll('.overlays-item__form-touch-type__item')
+
                     for (let k=0; k<formsChangeGaranty.length; k++){
+
                         formsChangeGaranty[k].onclick = () =>{
                             if (k===0){
                                 formsChangeGaranty[0].className = 'overlays-item__form-touch-type__item active-touch__type'
                                 formsChangeGaranty[1].className = 'overlays-item__form-touch-type__item'
                                 formsChangeGaranty[2].className = 'overlays-item__form-touch-type__item'
                                 formsChangeGaranty[3].className = 'overlays-item__form-touch-type__item'
+
+                                if (getTitles(i)[0].length!==1){
+                                    getTitles(i)[0][0].style.display = 'block'
+                                    getTitles(i)[0][1].style.display = 'none'
+                                    getTitles(i)[0][2].style.display = 'none'
+                                    getTitles(i)[0][3].style.display = 'none'
+
+                                    getTexts(i)[0][0].style.display = 'block'
+                                    getTexts(i)[0][1].style.display = 'none'
+                                    getTexts(i)[0][2].style.display = 'none'
+                                    getTexts(i)[0][3].style.display = 'none'
+                                }
+                                else{
+                                    getTitles(i)[0][0].style.display = 'block'
+                                    getTexts(i)[0][0].style.display = 'block'
+                                }
+
                             }
                             if (k===1){
                                 formsChangeGaranty[0].className = 'overlays-item__form-touch-type__item'
                                 formsChangeGaranty[1].className = 'overlays-item__form-touch-type__item active-touch__type'
                                 formsChangeGaranty[2].className = 'overlays-item__form-touch-type__item'
                                 formsChangeGaranty[3].className = 'overlays-item__form-touch-type__item'
+                                if (getTitles(i)[0].length>1){
+                                    getTitles(i)[0][0].style.display = 'none'
+                                    getTitles(i)[0][1].style.display = 'block'
+                                    getTitles(i)[0][2].style.display = 'none'
+                                    getTitles(i)[0][3].style.display = 'none'
+
+                                    getTexts(i)[0][0].style.display = 'none'
+                                    getTexts(i)[0][1].style.display = 'block'
+                                    getTexts(i)[0][2].style.display = 'none'
+                                    getTexts(i)[0][3].style.display = 'none'
+                                }
+                                else{
+                                    getTitles(i)[0][0].style.display = 'block'
+                                    getTexts(i)[0][0].style.display = 'block'
+                                }
                             }
                             if (k===2){
                                 formsChangeGaranty[0].className = 'overlays-item__form-touch-type__item'
                                 formsChangeGaranty[1].className = 'overlays-item__form-touch-type__item'
                                 formsChangeGaranty[2].className = 'overlays-item__form-touch-type__item active-touch__type'
                                 formsChangeGaranty[3].className = 'overlays-item__form-touch-type__item'
+                                if (getTitles(i)[0].length>1){
+                                    getTitles(i)[0][0].style.display = 'none'
+                                    getTitles(i)[0][1].style.display = 'none'
+                                    getTitles(i)[0][2].style.display = 'block'
+                                    getTitles(i)[0][3].style.display = 'none'
+
+                                    getTexts(i)[0][0].style.display = 'none'
+                                    getTexts(i)[0][1].style.display = 'none'
+                                    getTexts(i)[0][2].style.display = 'block'
+                                    getTexts(i)[0][3].style.display = 'none'
+                                }
+                                else{
+                                    getTitles(i)[0][0].style.display = 'block'
+                                    getTexts(i)[0][0].style.display = 'block'
+                                }
                             }
                             if (k===3){
                                 formsChangeGaranty[0].className = 'overlays-item__form-touch-type__item'
                                 formsChangeGaranty[1].className = 'overlays-item__form-touch-type__item'
                                 formsChangeGaranty[2].className = 'overlays-item__form-touch-type__item'
                                 formsChangeGaranty[3].className = 'overlays-item__form-touch-type__item active-touch__type'
+                                if (getTitles(i)[0].length>1){
+                                    getTitles(i)[0][0].style.display = 'none'
+                                    getTitles(i)[0][1].style.display = 'none'
+                                    getTitles(i)[0][2].style.display = 'none'
+                                    getTitles(i)[0][3].style.display = 'block'
+
+                                    getTexts(i)[0][0].style.display = 'none'
+                                    getTexts(i)[0][1].style.display = 'none'
+                                    getTexts(i)[0][2].style.display = 'none'
+                                    getTexts(i)[0][3].style.display = 'block'
+                                }
+                                else{
+                                    getTitles(i)[0][0].style.display = 'block'
+                                    getTexts(i)[0][0].style.display = 'block'
+                                }
                             }
                         }
                     }
@@ -602,6 +444,7 @@
                     console.log('Error')
                 }
             }
+
         },
         mounted() {
             let products = this.productRequest()
@@ -612,26 +455,38 @@
                 product.className = 'overlays-item'
                 let productDescriptionBlock = document.createElement('div')
                 productDescriptionBlock.className = 'overlays-item__description'
-                let productDescriptionBlockTitle = document.createElement('p')
-                productDescriptionBlockTitle.className = 'overlays-item__description-title'
-                productDescriptionBlockTitle.innerText = products[i].products[0].displayName
-                let productDescriptionBlockText = document.createElement('p')
-                productDescriptionBlockText.className = 'overlays-item__description-text'
-                productDescriptionBlockText.innerText = products[i].products[0].description
+                const createDescriptionsTitles = function(a) {
+                    let descArr = []
+                    for (let k=0; k<products[a].products.length; k++){
+                        let descTitle = document.createElement('p')
+                        descTitle.className = 'overlays-item__description-title'
+                        descTitle.innerText = products[a].products[k].name
+                        descArr.push(descTitle)
+                    }
+                    return descArr
+                }
+                const createDescriptionsText = function(a) {
+                    let descArr = []
+                    for (let k=0; k<products[a].products.length; k++){
+                        let descText = document.createElement('p')
+                        descText.className = 'overlays-item__description-text'
+                        descText.innerText = products[a].products[k].description
+                        descArr.push(descText)
+                    }
+                    return descArr
+                }
                 let productForm = document.createElement('form')
                 productForm.className = 'overlays-item__form'
                 productForm.style.background = 'linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0.1) 100%), url('+products[i].meta.slice(10, products[i].meta.length-1)+') 100% 100% no-repeat'
                 productForm.style.backgroundSize = 'cover'
                 let closeBtn = document.createElement('div')
                 closeBtn.className = 'close-btn'
-
                 let closeBtnItem1 = document.createElement('span')
                 closeBtnItem1.className = 'close-btn__item'
                 let closeBtnItem2 = document.createElement('span')
                 closeBtnItem2.className = 'close-btn__item'
                 closeBtn.appendChild(closeBtnItem1)
                 closeBtn.appendChild(closeBtnItem2)
-
                 let overlaysTouch = document.createElement('div')
                 overlaysTouch.className = 'overlays-item__form-touch'
                 let overlaysTouchPrice = document.createElement('div')
@@ -657,7 +512,7 @@
                 overlaysTouchTypeImg.src = ''
                 //-----------------------------------------------------------------------------
                 let overlaysTouchTypeItem1 = document.createElement('div')
-                overlaysTouchTypeItem1.className = 'overlays-item__form-touch-type__item'
+                overlaysTouchTypeItem1.className = 'overlays-item__form-touch-type__item active-touch__type'
                 let selectType1 = document.createElement('div')
                 selectType1.className = 'select-type'
                 let overlaysTouchTypeItemText1 = document.createElement('p')
@@ -718,10 +573,13 @@
                 let buyBtn = document.createElement('button')
                 buyBtn.style.background = 'linear-gradient(243.71deg, #26D657 0%, #0AD266 100%)'
                 buyBtn.innerText = 'Купить за'+products[i].products[0].price+' ₽'
-
                 product.appendChild(productDescriptionBlock)
-                productDescriptionBlock.appendChild(productDescriptionBlockTitle)
-                productDescriptionBlock.appendChild(productDescriptionBlockText)
+                for (let k=0; k<createDescriptionsTitles(i).length; k++){
+                    productDescriptionBlock.appendChild(createDescriptionsTitles(i)[k])
+                }
+                for (let k=0; k<createDescriptionsText(i).length; k++){
+                    productDescriptionBlock.appendChild(createDescriptionsText(i)[k])
+                }
                 product.appendChild(productForm)
                 productForm.appendChild(closeBtn)
                 productForm.appendChild(overlaysTouch)
@@ -756,7 +614,11 @@
                 overlaysItemBuyBlock.appendChild(buyBtn)
                 caseContainer.appendChild(product)
 
+
+
             }
+            this.changeCategory()
+            this.changeGaranty()
         }
     }
 </script>

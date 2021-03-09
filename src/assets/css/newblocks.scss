@@ -712,9 +712,26 @@
   }
 }
 
+
+
 .case-container{
   width: 69.375rem;
   margin: 0 auto;
+}
+
+.overlays-item{
+  &__description-title:nth-child(1){
+    display: block;
+  }
+  &__description-title:nth-child(2){
+    display: none;
+  }
+  &__description-title:nth-child(3){
+    display: none;
+  }
+  &__description-title:nth-child(4){
+    display: none;
+  }
 }
 
 
