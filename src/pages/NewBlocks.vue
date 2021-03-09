@@ -70,7 +70,7 @@
                 </form>
             </div>
         </section>
-        <h2>Все товары</h2>
+        <h2 class="products-title">Все товары</h2>
         <div class="select-type__block">
 
             <div @click="changeCategory()" class="select-type__block-item active-select__type">
@@ -86,88 +86,14 @@
                 <p class="select-type__block-item__text">Ключи</p>
             </div>
         </div>
-        <div class="mini-games__container">
-            <div class="mini-games__container-item">
-                <p class="mini-games__container-item__name">Rainbow Six: Siege</p>
-                    <button type="button" class="mini-games__container-item__button">
-                        <p class="mini-games__container-item__button-text">Купить за 119 ₽</p>
-                    </button>
-            </div>
-            <div class="mini-games__container-item">
+        <div class="mini-games__container all">
 
-                <p class="mini-games__container-item__name">Rainbow Six: Siege</p>
-                <button type="button" class="mini-games__container-item__button">
-                    <p class="mini-games__container-item__button-text">Купить за 119 ₽</p>
-                </button>
-            </div>
-            <div class="mini-games__container-item">
-
-                <p class="mini-games__container-item__name">Rainbow Six: Siege</p>
-                <button type="button" class="mini-games__container-item__button">
-                    <p class="mini-games__container-item__button-text">Купить за 119 ₽</p>
-                </button>
-            </div>
-            <div class="mini-games__container-item">
-
-                <p class="mini-games__container-item__name">Rainbow Six: Siege</p>
-                <button type="button" class="mini-games__container-item__button">
-                    <p class="mini-games__container-item__button-text">Купить за 119 ₽</p>
-                </button>
-            </div>
-            <div class="mini-games__container-item">
-
-                <p class="mini-games__container-item__name">Rainbow Six: Siege</p>
-                <button type="button" class="mini-games__container-item__button">
-                    <p class="mini-games__container-item__button-text">Купить за 119 ₽</p>
-                </button>
-            </div>
-            <div class="mini-games__container-item">
-
-                <p class="mini-games__container-item__name">Rainbow Six: Siege</p>
-                <button type="button" class="mini-games__container-item__button">
-                    <p class="mini-games__container-item__button-text">Купить за 119 ₽</p>
-                </button>
-            </div><div class="mini-games__container-item">
-
-            <p class="mini-games__container-item__name">Rainbow Six: Siege</p>
-            <button type="button" class="mini-games__container-item__button">
-                <p class="mini-games__container-item__button-text">Купить за 119 ₽</p>
-            </button>
-        </div><div class="mini-games__container-item">
-
-            <p class="mini-games__container-item__name">Rainbow Six: Siege</p>
-            <button type="button" class="mini-games__container-item__button">
-                <p class="mini-games__container-item__button-text">Купить за 119 ₽</p>
-            </button>
         </div>
-            <div class="mini-games__container-item">
+        <div class="mini-games__container accounts">
 
-                <p class="mini-games__container-item__name">Rainbow Six: Siege</p>
-                <button type="button" class="mini-games__container-item__button">
-                    <p class="mini-games__container-item__button-text">Купить за 119 ₽</p>
-                </button>
-            </div>
-            <div class="mini-games__container-item">
+        </div>
+        <div class="mini-games__container keys">
 
-                <p class="mini-games__container-item__name">Rainbow Six: Siege</p>
-                <button type="button" class="mini-games__container-item__button">
-                    <p class="mini-games__container-item__button-text">Купить за 119 ₽</p>
-                </button>
-            </div>
-            <div class="mini-games__container-item">
-
-                <p class="mini-games__container-item__name">Rainbow Six: Siege</p>
-                <button type="button" class="mini-games__container-item__button">
-                    <p class="mini-games__container-item__button-text">Купить за 119 ₽</p>
-                </button>
-            </div>
-            <div class="mini-games__container-item">
-
-                <p class="mini-games__container-item__name">Rainbow Six: Siege</p>
-                <button type="button" class="mini-games__container-item__button">
-                    <p class="mini-games__container-item__button-text">Купить за 119 ₽</p>
-                </button>
-            </div>
         </div>
         <section id="overlays">
 
@@ -289,6 +215,10 @@
             changeCategory(){
                 //let categoryBackground = document.querySelectorAll('.select-border')
                 let category = document.querySelectorAll('.select-type__block-item')
+                let miniGames = document.querySelectorAll('.mini-games__container-item')
+                let miniGamesAccount = document.querySelectorAll('.account-game')
+                let miniGamesKey = document.querySelectorAll('.key-game')
+                let productsTitle = document.querySelector('.products-title')
                 for (let i=0; i<category.length; i++){
                     category[i].onclick = function(){
                         if (i===0){
@@ -296,18 +226,48 @@
                             category[0].className = 'select-type__block-item active-select__type'
                             category[1].className = 'select-type__block-item'
                             category[2].className = 'select-type__block-item'
+                            productsTitle.innerText = 'Все товары'
+                            for (let k=0; k<miniGames.length; k++){
+                                miniGames[k].style.display = 'flex'
+                            }
+                            for (let k=0; k<miniGamesAccount.length; k++){
+                                miniGamesAccount[k].style.display = 'flex'
+                            }
+                            for (let k=0; k<miniGamesKey.length; k++){
+                                miniGamesKey[k].style.display = 'flex'
+                            }
                         }
                         if (i===1){
                             console.log(i)
                             category[0].className = 'select-type__block-item'
                             category[1].className = 'select-type__block-item active-select__type'
                             category[2].className = 'select-type__block-item'
+                            productsTitle.innerText = 'Аккаунты'
+                            for (let k=0; k<miniGames.length; k++){
+                                miniGames[k].style.display = 'none'
+                            }
+                            for (let k=0; k<miniGamesAccount.length; k++){
+                                miniGamesAccount[k].style.display = 'flex'
+                            }
+                            for (let k=0; k<miniGamesKey.length; k++){
+                                miniGamesKey[k].style.display = 'none'
+                            }
                         }
                         if (i===2){
                             console.log(i)
                             category[0].className = 'select-type__block-item'
                             category[1].className = 'select-type__block-item'
                             category[2].className = 'select-type__block-item active-select__type'
+                            productsTitle.innerText = 'Ключи'
+                            for (let k=0; k<miniGames.length; k++){
+                                miniGames[k].style.display = 'none'
+                            }
+                            for (let k=0; k<miniGamesAccount.length; k++){
+                                miniGamesAccount[k].style.display = 'none'
+                            }
+                            for (let k=0; k<miniGamesKey.length; k++){
+                                miniGamesKey[k].style.display = 'flex'
+                            }
                         }
                     }
                 }
@@ -316,12 +276,13 @@
             changeGaranty(){
                 let forms = document.querySelectorAll('.overlays-item__form')
                 let modal = document.querySelectorAll('.overlays-item')
+                let priceValue = document.querySelectorAll('.overlays-item__form-touch-price__value')
+                console.log(modal)
                 let getTitles = function(e){
                     let getTitlesArr = []
                     for (let a=0; a<modal.length; a++){
                         let modalTitles = modal[e].querySelectorAll('.overlays-item__description-title')
                         getTitlesArr.push(modalTitles)
-
                     }
                     return getTitlesArr
                 }
@@ -330,9 +291,24 @@
                     for (let a=0; a<modal.length; a++){
                         let modalText = modal[e].querySelectorAll('.overlays-item__description-text')
                         getTitlesArr.push(modalText)
-
                     }
                     return getTitlesArr
+                }
+                let lastPrice = function(e){
+                    let lastPriceArr = []
+                    for (let a=0; a<priceValue.length; a++){
+                        let modalLastPrice = priceValue[e].querySelectorAll('.overlays-item__form-touch-price__value-last')
+                        lastPriceArr.push(modalLastPrice)
+                    }
+                    return lastPriceArr
+                }
+                let newPrice = function(e){
+                    let newPriceArr = []
+                    for (let a=0; a<priceValue.length; a++){
+                        let modalNewPrice = priceValue[e].querySelectorAll('.overlays-item__form-touch-price__value-new')
+                        newPriceArr.push(modalNewPrice)
+                    }
+                    return newPriceArr
                 }
 
 
@@ -340,7 +316,8 @@
                     let formsChangeGaranty = forms[i].querySelectorAll('.overlays-item__form-touch-type__item')
 
                     for (let k=0; k<formsChangeGaranty.length; k++){
-
+                        console.log()
+                        console.log(newPrice(i)[0][0])
                         formsChangeGaranty[k].onclick = () =>{
                             if (k===0){
                                 formsChangeGaranty[0].className = 'overlays-item__form-touch-type__item active-touch__type'
@@ -358,10 +335,24 @@
                                     getTexts(i)[0][1].style.display = 'none'
                                     getTexts(i)[0][2].style.display = 'none'
                                     getTexts(i)[0][3].style.display = 'none'
+
+                                    lastPrice(i)[0][0].style.display = 'block'
+                                    lastPrice(i)[0][1].style.display = 'none'
+                                    lastPrice(i)[0][2].style.display = 'none'
+                                    lastPrice(i)[0][3].style.display = 'none'
+
+                                    newPrice(i)[0][0].style.display = 'block'
+                                    newPrice(i)[0][1].style.display = 'none'
+                                    newPrice(i)[0][2].style.display = 'none'
+                                    newPrice(i)[0][3].style.display = 'none'
+
                                 }
                                 else{
                                     getTitles(i)[0][0].style.display = 'block'
                                     getTexts(i)[0][0].style.display = 'block'
+                                    lastPrice(i)[0][0].style.display = 'block'
+                                    newPrice(i)[0][0].style.display = 'block'
+
                                 }
 
                             }
@@ -380,10 +371,22 @@
                                     getTexts(i)[0][1].style.display = 'block'
                                     getTexts(i)[0][2].style.display = 'none'
                                     getTexts(i)[0][3].style.display = 'none'
+
+                                    lastPrice(i)[0][0].style.display = 'none'
+                                    lastPrice(i)[0][1].style.display = 'block'
+                                    lastPrice(i)[0][2].style.display = 'none'
+                                    lastPrice(i)[0][3].style.display = 'none'
+
+                                    newPrice(i)[0][0].style.display = 'none'
+                                    newPrice(i)[0][1].style.display = 'block'
+                                    newPrice(i)[0][2].style.display = 'none'
+                                    newPrice(i)[0][3].style.display = 'none'
                                 }
                                 else{
                                     getTitles(i)[0][0].style.display = 'block'
                                     getTexts(i)[0][0].style.display = 'block'
+                                    lastPrice(i)[0][0].style.display = 'block'
+                                    newPrice(i)[0][0].style.display = 'block'
                                 }
                             }
                             if (k===2){
@@ -401,10 +404,22 @@
                                     getTexts(i)[0][1].style.display = 'none'
                                     getTexts(i)[0][2].style.display = 'block'
                                     getTexts(i)[0][3].style.display = 'none'
+
+                                    lastPrice(i)[0][0].style.display = 'none'
+                                    lastPrice(i)[0][1].style.display = 'none'
+                                    lastPrice(i)[0][2].style.display = 'block'
+                                    lastPrice(i)[0][3].style.display = 'none'
+
+                                    newPrice(i)[0][0].style.display = 'none'
+                                    newPrice(i)[0][1].style.display = 'none'
+                                    newPrice(i)[0][2].style.display = 'block'
+                                    newPrice(i)[0][3].style.display = 'none'
                                 }
                                 else{
                                     getTitles(i)[0][0].style.display = 'block'
                                     getTexts(i)[0][0].style.display = 'block'
+                                    lastPrice(i)[0][0].style.display = 'block'
+                                    newPrice(i)[0][0].style.display = 'block'
                                 }
                             }
                             if (k===3){
@@ -422,10 +437,22 @@
                                     getTexts(i)[0][1].style.display = 'none'
                                     getTexts(i)[0][2].style.display = 'none'
                                     getTexts(i)[0][3].style.display = 'block'
+
+                                    lastPrice(i)[0][0].style.display = 'none'
+                                    lastPrice(i)[0][1].style.display = 'none'
+                                    lastPrice(i)[0][2].style.display = 'none'
+                                    lastPrice(i)[0][3].style.display = 'block'
+
+                                    newPrice(i)[0][0].style.display = 'none'
+                                    newPrice(i)[0][1].style.display = 'none'
+                                    newPrice(i)[0][2].style.display = 'none'
+                                    newPrice(i)[0][3].style.display = 'block'
                                 }
                                 else{
                                     getTitles(i)[0][0].style.display = 'block'
                                     getTexts(i)[0][0].style.display = 'block'
+                                    lastPrice(i)[0][0].style.display = 'block'
+                                    newPrice(i)[0][0].style.display = 'block'
                                 }
                             }
                         }
@@ -442,6 +469,24 @@
                     return(subjectsRequest)
                 } else {
                     console.log('Error')
+                }
+            },
+            showModal(){
+                let previewsBtns =document.querySelectorAll('.mini-games__container-item__button')
+                let modals = document.querySelectorAll('.overlays-item')
+                for (let i=0; i<previewsBtns.length; i++){
+                    previewsBtns[i].onclick = function(){
+                        modals[i].style.display = 'flex'
+                    }
+                }
+            },
+            closeModal(){
+                let closeBtn = document.querySelectorAll('.close-btn')
+                let modals = document.querySelectorAll('.overlays-item')
+                for (let i=0; i<closeBtn.length;i++){
+                    closeBtn[i].onclick = function(){
+                        modals[i].style.display = 'none'
+                    }
                 }
             }
 
@@ -475,6 +520,7 @@
                     }
                     return descArr
                 }
+
                 let productForm = document.createElement('form')
                 productForm.className = 'overlays-item__form'
                 productForm.style.background = 'linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0.1) 100%), url('+products[i].meta.slice(10, products[i].meta.length-1)+') 100% 100% no-repeat'
@@ -496,12 +542,32 @@
                 overlaysTouchPriceKey.innerText = 'Цена:'
                 let overlaysTouchPriceValue = document.createElement('div')
                 overlaysTouchPriceValue.className = 'overlays-item__form-touch-price__value'
-                let overlaysTouchPriceValueLast = document.createElement('p')
-                overlaysTouchPriceValueLast.className = 'overlays-item__form-touch-price__value-last'
-                overlaysTouchPriceValueLast.innerText = products[i].products[0].prePrice + ' ₽'
-                let overlaysTouchPriceValueNew = document.createElement('p')
-                overlaysTouchPriceValueNew.className = 'overlays-item__form-touch-price__value-new'
-                overlaysTouchPriceValueNew.innerText = products[i].products[0].price + ' ₽'
+
+
+                const createLastPrices = function(a){
+                    let lastPriceArr = []
+                    for (let k=0; k<products[a].products.length; k++){
+                        let lastPrice = document.createElement('p')
+                        lastPrice.className = 'overlays-item__form-touch-price__value-last'
+                        lastPrice.innerText = products[i].products[0].prePrice + ' ₽'
+                        lastPriceArr.push(lastPrice)
+                    }
+                    return lastPriceArr
+                }
+
+                const createNewPrices = function(a){
+                    let newPriceArr = []
+                    for (let k=0; k<products[a].products.length; k++){
+                        let newPrice = document.createElement('p')
+                        newPrice.className = 'overlays-item__form-touch-price__value-new'
+                        newPrice.innerText = products[i].products[0].price + ' ₽'
+                        newPriceArr.push(newPrice)
+                    }
+                    return newPriceArr
+                }
+
+
+
                 let overlaysTouchText = document.createElement('p')
                 overlaysTouchText.className = 'overlays-item__form-touch-text'
                 overlaysTouchText.innerText = 'Гарантия'
@@ -580,14 +646,20 @@
                 for (let k=0; k<createDescriptionsText(i).length; k++){
                     productDescriptionBlock.appendChild(createDescriptionsText(i)[k])
                 }
+                for (let k=0; k<createLastPrices(i).length; k++){
+                    overlaysTouchPriceValue.appendChild(createLastPrices(i)[k])
+                }
+                for (let k=0; k<createNewPrices(i).length; k++){
+                    overlaysTouchPriceValue.appendChild(createNewPrices(i)[k])
+                }
+
                 product.appendChild(productForm)
                 productForm.appendChild(closeBtn)
                 productForm.appendChild(overlaysTouch)
                 overlaysTouch.appendChild(overlaysTouchPrice)
                 overlaysTouchPrice.appendChild(overlaysTouchPriceKey)
                 overlaysTouchPrice.appendChild(overlaysTouchPriceValue)
-                overlaysTouchPriceValue.appendChild(overlaysTouchPriceValueLast)
-                overlaysTouchPriceValue.appendChild(overlaysTouchPriceValueNew)
+
                 overlaysTouch.appendChild(overlaysTouchText)
                 overlaysTouch.appendChild(overlaysTouchType)
                 overlaysTouchType.appendChild(overlaysTouchTypeImg)
@@ -617,8 +689,63 @@
 
 
             }
+
+
+            let categoryAll = document.querySelectorAll('.mini-games__container')
+
+            for (let i=0; i<products.length; i++){
+                let miniGame        = document.createElement('div')
+                let miniGameName    = document.createElement('p')
+                let miniGameBtn     = document.createElement('button')
+                let miniGameBtnText = document.createElement('p')
+
+                miniGame.className          = 'mini-games__container-item'
+                miniGameName.className      = 'mini-games__container-item__name'
+                miniGameBtn.className       = 'mini-games__container-item__button'
+                miniGameBtnText.className   = 'mini-games__container-item__button-text'
+
+                if (products[i].products[0].category==='account'){
+                    miniGame.className = 'mini-games__container-item account-game'
+                }
+                if (products[i].products[0].category==='key') {
+                    miniGame.className = 'mini-games__container-item key-game'
+                }
+
+
+                miniGame.style.background = 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%), url(' + products[i].products[0].imgLink + ')'
+
+                miniGameName.innerText = products[i].products[0].displayName
+                miniGameBtnText.innerText = 'Купить за ' + products[i].products[0].price + ' ₽'
+
+                miniGameBtn.appendChild(miniGameBtnText)
+                miniGame.appendChild(miniGameName)
+                miniGame.appendChild(miniGameBtn)
+
+
+
+
+                categoryAll[0].appendChild(miniGame)
+
+
+
+
+
+
+            }
+            let modals = document.querySelectorAll('.overlays-item')
+            for (let i=0;i<modals.length;i++){
+                let newPrices = modals[i].querySelectorAll('.overlays-item__form-touch-price__value-new')
+                for (let l=0; l<newPrices.length;l++){
+                    newPrices[l].style.display = 'none'
+                }
+                newPrices[0].style.display = 'block'
+            }
+
+
             this.changeCategory()
             this.changeGaranty()
+            this.showModal()
+            this.closeModal()
         }
     }
 </script>
