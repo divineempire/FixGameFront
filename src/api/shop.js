@@ -102,6 +102,21 @@ export default class ShopApi extends Api {
     getGroupIdByProduct(pId) {
         return this.send("/productGroups/product/" + pId + "/idOnly");
     }
+
+    getAccountByRoute(route) {
+        let account = "";
+
+        if (route.query.account !== undefined)
+            account = route.query.account.substring(5);
+        else if (route.query.LMI_PAYMENT_NO !== undefined)
+            account = this.$route.query.LMI_PAYMENT_NO;
+        else if (route.query.orderId !== undefined)
+            account = route.query.orderId
+        else
+            account = undefined;
+
+        return account;
+    }
 }
 /*
 Customs Error-code:

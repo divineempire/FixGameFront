@@ -11,7 +11,8 @@ export default {
                     amount: 0
                 }
             ]
-        }
+        },
+        purchases: []
     }),
     mutations: {
         setEmail: function (state, payload) {
@@ -29,6 +30,19 @@ export default {
             if (payload.coupon !== undefined)
                 this.commit("setCoupon", payload.coupon);
             this.commit("setProduct", {id: payload.products[0].productId, amount: payload.products[0].amount});
+        },
+        setPurchases: function (state, payload) {
+            state.purchases = payload;
+        },
+        testSetPurchases: function (state) {
+            state.purchases = ["ddd-ttt",
+                "pidoras:govno",
+                "1234-1234"];
+        }
+    },
+    actions: {
+        getPurchases({commit}, orderId) {
+            this.$shopapi.checkLastPurchases(orderId).then(data => commit("setPurchases", data.values));
         }
     }
 }
