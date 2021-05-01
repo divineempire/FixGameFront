@@ -69,8 +69,8 @@ export default {
   },
   methods: {
     openForm: function () {
-      this.$store.commit("buy/setCurrentAccountToBuy", this.group.id);
-      this.$store.commit("buy/openForm");
+      this.$store.commit("packs/setProductToBuy", this.group.id);
+      this.$store.commit("packs/openForm");
     }
   }
 }

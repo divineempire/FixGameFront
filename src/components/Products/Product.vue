@@ -31,8 +31,8 @@
         },
         methods: {
             onBuyClick() {
-                this.$store.commit("buy/setCurrentAccountToBuy", this.id);
-                this.$store.commit("buy/openForm");
+                this.$store.commit("packs/setProductToBuy", this.id);
+                this.$store.commit("packs/openForm");
             }
         }
     }

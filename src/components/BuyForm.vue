@@ -68,7 +68,7 @@
         data: function () {
             return {
                 guarantee: 0,
-                item: this.$store.getters["packs/getItemsById"](this.$store.state.buy.currentAccountToBuy)['products'],
+                item: this.$store.getters["packs/getItemsById"](this.$store.state.packs.productToBuyId)['products'],
                 email: "",
                 promocode: "",
                 correctEmail: true,
@@ -96,7 +96,7 @@
             },
             backImg: function () {
                 return "linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.85) 100%), url('" +
-                    this.$store.getters["packs/getItemsById"](this.$store.state.buy.currentAccountToBuy)['modalImg'] + "')";
+                    this.$store.getters["packs/getItemsById"](this.$store.state.packs.productToBuyId)['modalImg'] + "')";
             },
             amounts: function () {
                 let arr = [];
@@ -179,7 +179,7 @@
         },
         methods: {
             closeModal: function () {
-                this.$store.commit("buy/closeForm");
+                this.$store.commit("packs/closeForm");
             },
             cancelClick: function (event) {
                 event.stopPropagation();
@@ -196,7 +196,7 @@
                 // eslint-disable-next-line no-invalid-regexp,no-useless-escape
                 const re = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
                 this.correctEmail = re.test(this.email);
-                console.log(this.isNeedUnactiveBtn());
+
                 if (this.isNeedUnactiveBtn())
                     this.buttonState = 3;
                 else if (this.buttonState !== 1)
@@ -204,6 +204,7 @@
             },
             changeGuarantee: function (i) {
                 this.guarantee = i;
+                this.countSum();
             },
             onInputCode: function () {
                 if (!this.correctPromocode) {
@@ -236,7 +237,7 @@
                     empty: true
                 }
                 const products = {
-                    productId: this.$store.getters.getItemsById(this.$store.state.modal.itemid)['products'][this.guarantee].id,
+                    productId: this.$store.getters["packs/getItemsById"](this.$store.state.packs.productToBuyId)['products'][this.guarantee].id,
                     amount: this.selectAmount
                 }
                 const coupon = this.promocode === "" ? null : this.promocode;
@@ -264,7 +265,7 @@
                     email: this.email
                 }
                 const products = {
-                    productId: this.$store.getters.getItemsById(this.$store.state.modal.itemid)['products'][this.guarantee].id,
+                    productId: this.$store.getters["packs/getItemsById"](this.$store.state.packs.productToBuyId)['products'][this.guarantee].id,
                     amount: this.selectAmount
                 }
                 const coupon = this.promocode === "" ? null : this.promocode;
@@ -286,7 +287,7 @@
                             this.correctPromocode = false;
                             this.buttonState = 3;
                         } else {
-                            this.$router.replace("/payment/fail");
+                            this.$router.replace("/result/fail");
                         }
                     });
             }
@@ -313,19 +314,17 @@
         height: 100vh;
         height: -webkit-fill-available;
     }
-
     .row {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
     }
-
     .buy-modal {
         position: relative;
         width: 100%;
 
         height: 100%;
-        border-radius: 10px;
+        border-radius: 0;
 
         background: #FFFFFF;
         margin: auto auto;
@@ -549,13 +548,13 @@
         }
     }
 
-    @media($min-mobile) {
+    @media only screen and ($min-mobile) {
         .buy-modal {
             width: 65%;
             //min-height: 540px;
             height: auto;
             position: relative;
-            border-radius: 4px;
+            border-radius: 10px;
 
             .text-wrapper {
                 height: auto;

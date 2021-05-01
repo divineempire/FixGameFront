@@ -49,7 +49,7 @@
                 isLoading: 'loading'
             }),
             formIsOpen: function () {
-                return this.$store.state.buy.openForm;
+                return this.$store.state.packs.openForm;
             }
         },
         created() {

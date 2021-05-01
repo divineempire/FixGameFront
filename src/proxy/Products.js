@@ -2,7 +2,7 @@ import Proxy from './Proxy'
 
 export default class ProductsProxy extends Proxy {
   constructor (store) {
-    super(store, 'api')
+    super(store, 'apipayment')
   }
 
   getProducts () {
