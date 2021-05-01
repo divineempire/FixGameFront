@@ -4,10 +4,19 @@ import NewBlocks from '@/pages/NewBlocks'
 
 export default [
   {
-    path: '/',
-    name: 'main',
-    component: Main,
-
+      path: '/',
+      name: 'main',
+      component: Main,
+      children: [
+          {
+              path: 'keys',
+              name: 'keys'
+          },
+          {
+              path: 'accounts',
+              name: 'accs'
+          },
+      ]
   },
   {
     path: '/NewBlocks',

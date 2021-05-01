@@ -5,6 +5,7 @@ export default function () {
     products: [],
     username: '',
     email: '',
-    coupon: ''
+    coupon: '',
+    openForm: false
   }
 }

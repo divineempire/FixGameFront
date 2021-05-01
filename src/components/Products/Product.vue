@@ -1,8 +1,8 @@
 <template>
-    <div class="mini-games__container-item">
-        <p class="mini-games__container-item__name">Rainbow Six: Siege</p>
-        <button type="button" class="mini-games__container-item__button">
-            <p class="mini-games__container-item__button-text">Купить за 119 ₽</p>
+    <div :style="{background: getBackImg}" class="mini-games__container-item">
+        <p class="mini-games__container-item__name">{{title}}</p>
+        <button @click="onBuyClick" class="mini-games__container-item__button" type="button">
+            <p class="mini-games__container-item__button-text">Купить за {{cost}} ₽</p>
         </button>
     </div>
 </template>
@@ -13,24 +13,27 @@
     export default {
         name: 'PackCard',
         props: {
-            // type: {
-            //   type: String,
-            //   require: false,
-            //   default: 'mine'
-            // },
-            info: {
-                type: Object,
-                require: false,
-                default: () => ({
-                    name: 'Minecraft'
-                })
+            product: Object
+        },
+        components: {},
+        data: function () {
+            return {
+                title: this.product.products[0].displayName,
+                id: this.product.id,
+                backImg: this.product.products[0].imgLink,
+                cost: this.product.products[0].price
             }
         },
-        components: {
-
-        },
         computed: {
-
+            getBackImg: function () {
+                return "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%), url('" + this.backImg + "')";
+            }
+        },
+        methods: {
+            onBuyClick() {
+                this.$store.commit("buy/setCurrentAccountToBuy", this.id);
+                this.$store.commit("buy/openForm");
+            }
         }
     }
 </script>
