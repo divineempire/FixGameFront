@@ -22,6 +22,8 @@
 
 <style lang="scss" scoped>
     .products-block {
+        margin-bottom: 120px;
+
         &__list {
             list-style: none;
             margin: 0;
