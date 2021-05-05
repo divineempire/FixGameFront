@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 import packs from './packs/index'
 import global from './global/index'
 import payment from './payment/index'
+import cases from './cases/index'
 import ShopApi from "../api/shop";
 import CaseApi from "../api/case";
 
@@ -11,9 +12,10 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   modules: {
-    packs,
-    global,
-    payment
+      packs,
+      global,
+      payment,
+      cases
   }
 })
 store.$shopapi = new ShopApi();

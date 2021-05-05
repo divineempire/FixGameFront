@@ -544,16 +544,18 @@
     &-img {
       width: 1.5rem;
       cursor: pointer;
+      z-index: 100;
     }
 
     &-back__text {
+      cursor: pointer;
       font-style: normal;
       font-weight: 500;
       font-size: 1.125rem;
       margin: 0;
       margin-left: 0.625rem;
-      cursor: pointer;
       color: #FFFFFF;
+      z-index: 100;
     }
 
     &-title {
@@ -581,6 +583,32 @@
     flex-wrap: nowrap;
     overflow: hidden;
     align-items: center;
+
+    .roulette-line__item-wrapper {
+      overflow: hidden;
+      position: relative;
+
+      ul {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        justify-content: flex-start;
+        transition-duration: 5s;
+        position: relative;
+
+        li {
+          background-size: cover !important;
+          height: 14.75rem;
+          width: 12rem;
+          display: block;
+          flex: 0 0 auto;
+          margin-right: 0.5rem;
+          border-radius: 0.25rem;
+        }
+      }
+    }
 
     &__item {
       width: 17rem;
@@ -667,20 +695,169 @@
     height: 22.5rem;
     border-radius: 0.625rem;
     display: flex;
-    &__form{
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .cost-block {
+      margin-top: 20px;
+      margin-bottom: 25px;
+
+      .cost-t {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 34px;
+      }
+
+      .cost-v {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 34px;
+
+        vertical-align: middle;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .old {
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: 200;
+          font-size: 24px;
+          line-height: 28px;
+          text-decoration: line-through;
+
+          color: #FFFFFF;
+          opacity: 0.7;
+
+          padding-right: 15px;
+        }
+      }
+    }
+
+    .users-input {
+      padding-bottom: 20px;
+
+      .form-group {
+        margin-bottom: 1rem;
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+
+      .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .select-wrapper {
+        padding-right: 5px;
+        padding-left: 5px;
+        width: calc(calc(100% / 24) * 6);
+      }
+
+      .button-wrapper {
+        padding-right: 5px;
+        padding-left: 5px;
+        width: calc(calc(100% / 24) * 18);
+      }
+
+      label {
+        width: 100%;
+        font-size: 16px;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+
+        .error {
+          color: red;
+          float: right;
+        }
+      }
+
+      input {
+        color: white;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding: 11px 20px;
+
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+
+        &:focus {
+          outline: none;
+        }
+
+        &.error {
+          border: 1px solid red;
+        }
+      }
+
+      select {
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-sizing: border-box;
+        border-radius: 4px;
+
+        color: white;
+        padding: 10px;
+        width: 100%;
+        font-size: 12px;
+        height: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      button[type="submit"] {
+        background: $premium;
+        border-radius: 4px;
+        width: 100%;
+
+        padding: 16px 0;
+        border: none;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: white;
+        cursor: pointer;
+
+        &.unactive {
+          background: #808080 !important;
+          cursor: default;
+        }
+      }
+    }
+
+    &__form {
       background: rgba(32, 32, 32, 0.8);
       border-radius: 0px 10px 10px 0px;
       width: 30.3125rem;
       height: 100%;
       z-index: 1;
       padding: 1.5625rem 2.1875rem;
-      .overlays-item__form-touch-price{
-        &__value-last{
+      color: white;
+
+      .overlays-item__form-touch-price {
+        &__value-last {
           font-weight: 200;
         }
       }
+
       .overlays-item__form-touch__buy-block button {
-        background: linear-gradient(243.71deg, #7A80FF 0%, #716FFF 100%)!important;
+        background: linear-gradient(243.71deg, #7A80FF 0%, #716FFF 100%) !important;
 
         width: 19.25rem;
 

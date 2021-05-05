@@ -5,11 +5,11 @@
         <a href="https://www.youtube.com/channel/UCZ8fSWsoySnv1voIfi6mqwQ" class="navigation__youtube-link">
           YouTube
         </a>
+
         <router-link to="/" href="#" class="navigation__logo-link">
           <svg class="navigation__logo">
             <use xlink:href="#logo"/>
           </svg>
-
         </router-link>
         <a href="https://vk.me/fixgame_shop" class="navigation__support-link">
           Поддержка

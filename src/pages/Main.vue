@@ -2,55 +2,29 @@
     <section class="main">
         <transition mode="out-in" name="loading-packs">
             <Loader :key="'loader'" class="main__loader" v-if="isLoading"/>
-            <div :key="'list'" class="container main__container" v-else>
-                <Mine :packs="packs"/>
-                <Shop/>
-            </div>
+            <router-view class="main__body" v-else/>
         </transition>
-        <BuyForm class="main__buy-form" v-if="formIsOpen"/>
     </section>
 </template>
 
 <script>
     import Loader from '@/components/UI/Loader'
-    import {mapActions, mapState, mapMutations} from 'vuex'
-    import BuyForm from '@/components/BuyForm'
-    import Mine from '../components/Shop/Mine'
-    import Shop from "../components/Shop/Shop";
+    import {mapActions, mapState} from 'vuex'
 
     export default {
         name: 'Main',
         components: {
-            Shop,
-            Mine,
-            BuyForm,
             Loader
-        },
-        data() {
-            return {}
         },
         methods: {
             ...mapActions('packs', {
                 loadPacks: 'loadPacks'
-            }),
-            ...mapMutations('buy', {
-                setCurrentAccountToBuy: 'setCurrentAccountToBuy'
-            }),
-            openForm(type, pack) {
-                this.setCurrentAccountToBuy(pack)
-                this.formType = type
-            },
-        },
-        mounted() {
+            })
         },
         computed: {
             ...mapState('packs', {
-                packs: 'packs',
                 isLoading: 'loading'
-            }),
-            formIsOpen: function () {
-                return this.$store.state.packs.openForm;
-            }
+            })
         },
         created() {
             this.loadPacks()
@@ -69,6 +43,10 @@
             position: fixed;
             top: calc(50% - 75px);
             left: calc(50% - 37px);
+        }
+
+        &__body {
+            flex-grow: 1;
         }
 
         .loading-packs {

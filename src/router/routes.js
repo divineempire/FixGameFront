@@ -1,26 +1,16 @@
-import Main from '@/pages/Main'
+import Shop from "../pages/Shop";
 import PaymentResult from '@/pages/PaymentResult'
 import NewBlocks from '@/pages/NewBlocks'
 
 export default [
   {
-      path: '/',
-      name: 'main',
-      component: Main,
-      children: [
-          {
-              path: 'keys',
-              name: 'keys'
-          },
-          {
-              path: 'accounts',
-              name: 'accs'
-          },
-      ]
+    path: '/',
+    name: 'main',
+    component: Shop,
   },
   {
-    path: '/NewBlocks',
-    name: 'NewBlocks',
+    path: '/case',
+    name: 'Case',
     component: NewBlocks
   },
   {
