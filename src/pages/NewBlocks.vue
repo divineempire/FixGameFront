@@ -271,7 +271,7 @@
                             this.correctPromocode = false;
                             this.buttonState = 3;
                         } else {
-                            this.$router.replace("/payment/fail");
+                            this.$router.replace("/result/fail");
                         }
                     });
             },

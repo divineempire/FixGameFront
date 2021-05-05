@@ -2,15 +2,20 @@
   <header class="header">
     <div class="container header__container">
       <nav class="header__navigation navigation">
-        <a href="https://www.youtube.com/channel/UCZ8fSWsoySnv1voIfi6mqwQ" class="navigation__youtube-link">
-          YouTube
-        </a>
-
+        <router-link class="navigation__home-link" href="#" to="/">
+          Главная
+        </router-link>
+        <router-link class="navigation__case-link" href="#" to="/case">
+          Кейс от Фикса
+        </router-link>
         <router-link to="/" href="#" class="navigation__logo-link">
           <svg class="navigation__logo">
             <use xlink:href="#logo"/>
           </svg>
         </router-link>
+        <a class="navigation__youtube-link" href="https://www.youtube.com/channel/UCZ8fSWsoySnv1voIfi6mqwQ">
+          YouTube
+        </a>
         <a href="https://vk.me/fixgame_shop" class="navigation__support-link">
           Поддержка
         </a>
@@ -71,13 +76,21 @@ export default {
       text-align: center;
     }
 
-    &__youtube-link, &__support-link {
+    &__home-link, &__youtube-link, &__support-link, &__case-link {
       padding-top: 50px;
       text-decoration: none;
       font-weight: 600;
       font-size: 16px;
       line-height: 20px;
       color: $main-white;
+    }
+
+    &__home-link {
+      margin-right: 100px;
+    }
+
+    &__support-link {
+      margin-left: 100px;
     }
   }
 }
