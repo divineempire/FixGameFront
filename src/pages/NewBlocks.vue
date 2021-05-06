@@ -289,7 +289,7 @@
                 this.endSwipedCounter++;
 
                 if (this.selectAmount === this.endSwipedCounter) {
-                    this.$store.commit("showInfoModal", "sucessCase")
+                    this.$router.push({path: "/result/success", params: {from: "case"}});
                 }
             },
             initForBuy: function () {

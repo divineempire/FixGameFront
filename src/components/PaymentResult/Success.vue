@@ -25,24 +25,36 @@ export default {
   components: {
     Copy
   },
+  data: function () {
+    return {
+      resultFor: "shop"
+    }
+  },
   computed: {
     results: function () {
-      return this.$store.state.payment.purchases;
+      if (this.resultFor === "shop")
+        return this.$store.state.payment.purchases;
+      else
+        return this.$store.state.cases.wonValues;
     }
   },
   created: function () {
-    if (localStorage.isCaseBuy) {
-      this.$router.push('cases');
-      localStorage.removeItem("isCaseBuy");
+    if (this.$route.params.from !== undefined) {
+      this.resultFor = "case";
     } else {
-      let account = this.$store.$shopapi.getAccountByRoute(this.$route);
+      if (localStorage.isCaseBuy) {
+        this.$router.push('cases');
+        localStorage.removeItem("isCaseBuy");
+      } else {
+        let account = this.$store.$shopapi.getAccountByRoute(this.$route);
 
-      if (account !== undefined) {
-        this.$store.dispatch("getPurchases", account)
-        //todo протестить оплату и убрать коммент ниже
-        //this.$store.commit("testSetPurchases");
-      } else
-        this.$router.push('/')
+        if (account !== undefined) {
+          this.$store.dispatch("getPurchases", account)
+          //todo протестить оплату и убрать коммент ниже
+          //this.$store.commit("testSetPurchases");
+        } else
+          this.$router.push('/')
+      }
     }
   }
 }
