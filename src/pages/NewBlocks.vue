@@ -6,7 +6,7 @@
                 <p @click="goMain" class="top-back__block-back__text">Назад</p>
                 <p class="top-back__block-title">Кейс от Фиксплея</p>
             </div>
-            <RouletteLine :id="tri.id" :items="items" :key="tri.id" :needItemId="2" v-for="tri in tries"
+            <RouletteLine :id="tri.id" :items="items" :key="tri.id" :needItemId="tri.wonId" v-for="tri in tries"
                           v-on:swipeEnd="onEndSwipe"/>
             <div class="roulette-form">
                 <img class="roulette-form__img" :src="rouletteFon" alt="">
@@ -27,16 +27,19 @@
                                                            v-if="!correctEmail">Неверный E-Mail адрес</span>
                             </label>
                             <input :class="{error: !correctEmail}" id="email" placeholder="Введите Email"
+                                   v-bind:disabled="formUnactive"
                                    type="email" v-model="email" v-on:input="checkEmail">
                         </div>
                         <div class="form-group">
                             <label for="promo">Купон <span class="error" v-if="!correctPromocode">Купон не действительный</span></label>
                             <input :class="{error: !correctPromocode}" id="promo" placeholder="Введите купон"
+                                   v-bind:disabled="formUnactive"
                                    type="text" v-model="promocode" v-on:input="onInputCode">
                         </div>
                         <div class="form-row justify-content-between">
                             <div class="select-wrapper">
-                                <select id="amount" v-model="selectAmount" v-on:change="changeAmount">
+                                <select id="amount" v-bind:disabled="formUnactive" v-model="selectAmount"
+                                        v-on:change="changeAmount">
                                     <option v-bind:key="index"
                                             v-bind:selected="index===0"
                                             v-for="(item, index) in amounts">
@@ -289,7 +292,7 @@
                 this.endSwipedCounter++;
 
                 if (this.selectAmount === this.endSwipedCounter) {
-                    this.$router.push({path: "/result/success", params: {from: "case"}});
+                    setTimeout(() => this.$router.push({path: "/result/success", params: {from: "case"}}), 500);
                 }
             },
             initForBuy: function () {

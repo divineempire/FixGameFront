@@ -42,7 +42,7 @@ export default {
         },
         useAllCases({state, dispatch}) {
             for (let i = 0; i < state.casesInUse.length; i++) {
-                dispatch("useCase", i);
+                setTimeout(() => dispatch("useCase", i), 200);
             }
         }
     },

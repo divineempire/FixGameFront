@@ -16,8 +16,14 @@ export default class ShopApi extends Api {
         super(shopAx);
     }
 
-    getAllItems() {
-        return this.send("/products")
+    getAllItems(groups) {
+        let res = [];
+
+        groups.map((group) => {
+            Array.prototype.push.apply(res, group.products.flat());
+        });
+
+        return res;
     }
 
     getItems() {

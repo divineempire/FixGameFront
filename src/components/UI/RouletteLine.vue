@@ -35,7 +35,7 @@
                 } else {
                     for (let i = 0; i <= 16; i++) {
                         if (i === 12) {
-                            arr[i] = this.items[this.needItemId];
+                            arr[i] = this.items.find((i) => i.id === this.needItemId);
                         } else
                             arr[i] = this.items[this.getRandomNumber(0, this.items.length - 1)];
                     }
@@ -44,7 +44,7 @@
             },
             Swipe: function () {
                 if (this.$store.state.cases.casesInUse[this.id].inUsed) {
-                    return -78.125 + "rem";
+                    return -1 * this.getRandomNumber(106, 116) + "%";
                 } else
                     return 0;
             },

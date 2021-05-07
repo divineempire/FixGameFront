@@ -15,13 +15,11 @@ export function loadPacks({commit}) {
             commit('setPacks', res)
             api.$caseapi.getAllCases().then(function (data) {
                 commit("addCases", data, {root: true});
-                //todo и тут тоже убрать эту хрень
-                api.$shopapi.getAllItems().then(function (data) {
-                    commit("addAllItems", data, {root: true});
-                    setTimeout(() => {
-                        commit('setLoadingStatus', false)
-                    }, 2000)
-                });
+
+                commit("addAllItems", api.$shopapi.getAllItems(res), {root: true});
+                setTimeout(() => {
+                    commit('setLoadingStatus', false)
+                }, 2000)
             })
 
         })
