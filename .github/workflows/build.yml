@@ -7,7 +7,7 @@ env:
   image_url: ghcr.io/divineempire/fixgame-shop-front
   api_url: https://api.fixgame.ru
 
-  app_name: fixgme-shop-frontend
+  app_name: fixgame-shop-frontend
   host: fixgame.ru
 
 jobs:
