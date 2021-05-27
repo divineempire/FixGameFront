@@ -97,19 +97,27 @@
 }
 
 .mini-games__container{
-  width: 75%;
+  //width: 100%;
+  //display: flex;
+  //flex-direction: row;
+  ////flex-wrap: wrap;
+  //justify-content: space-between;
+  //flex-flow: row wrap;
+  //margin: 0 -15px;
+  margin: 0 -20px -20px 0;
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 0 auto;
-  &-item{
+
+  &-item {
+    padding: 0 20px 20px;
     width: calc(15.9375rem - 1.875rem);
     height: calc(15.9375rem - 1.875rem);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%), url(https://store-images.s-microsoft.com/image/apps.42686.14118972952938929.e450a403-f2e7-4cce-9efe-2788ee1967a3.c3cf1bdc-cb38-4558-a73b-d22dbba169da);
-    background-size: cover;
+    //background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+    background-size: cover !important;
     border-radius: 10px;
-    padding: 0.9375rem;
+    //padding: 0.9375rem;
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
@@ -117,12 +125,14 @@
     margin-bottom: 0.9375rem;
     transition: 1s;
     cursor: default;
-    &:hover{
+    margin-left: 1.875rem;
+
+    &:hover {
       transition: 1s;
       transform: scale(1.05);
     }
 
-    &__img-imitate{
+    &__img-imitate {
 
       position: absolute;
       top: 0;
@@ -193,14 +203,20 @@
 .overlays{
 
   &-item{
-    width: 100%;
+    width: 69.375rem;
     height: 33.75rem;
     background: #FFFFFF;
-    display: flex;
+
     flex-direction: row;
     border-radius: 1rem;
     overflow: hidden;
     margin-bottom: 4rem;
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    display: none;
+    z-index: 700;
+
 
     ::-webkit-scrollbar-button {
 
@@ -419,6 +435,7 @@
               font-size: 2.125rem;
               font-weight: bold;
               margin: 0;
+
             }
           }
         }
@@ -506,6 +523,434 @@
     background-blend-mode: screen;
   }
 }
+
+//рулетка
+
+#roulette {
+
+  width: 69.375rem;
+  margin: 4rem auto;
+
+  .top-back__block {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    border-radius: 0.625rem;
+    background: linear-gradient(0deg, rgba(32, 32, 32, 0.8), rgba(32, 32, 32, 0.8));
+    padding: 1.8125rem 2.5rem;
+    position: relative;
+
+    &-img {
+      width: 1.5rem;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    &-back__text {
+      cursor: pointer;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.125rem;
+      margin: 0;
+      margin-left: 0.625rem;
+      color: #FFFFFF;
+      z-index: 100;
+    }
+
+    &-title {
+      position: absolute;
+      left: 0%;
+      width: 100%;
+      text-align: center;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.5rem;
+
+      margin: 0;
+      color: #FFFFFF;
+    }
+  }
+
+  .roulette-line {
+    width: 100%;
+    height: 15.375rem;
+    background: linear-gradient(270deg, #FF9950 0%, #716FFF 52.08%, #0AD266 100%);
+    border-radius: 0.625rem;
+    margin: 0.3125rem 0;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    align-items: center;
+
+    .roulette-line__item-wrapper {
+      overflow: hidden;
+      position: relative;
+
+      ul {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        justify-content: flex-start;
+        transition-duration: 5s;
+        position: relative;
+
+        li {
+          background-size: cover !important;
+          height: 14.75rem;
+          width: 12rem;
+          display: block;
+          flex: 0 0 auto;
+          margin-right: 0.5rem;
+          border-radius: 0.25rem;
+        }
+      }
+    }
+
+    &__item {
+      width: 17rem;
+      height: 14.75rem;
+      margin-right: 0.5rem;
+      border-radius: 0.25rem;
+      background-image: url("https://im0-tub-ru.yandex.net/i?id=ce68287ae2356b8b7b1226672eb64c42-l&ref=rim&n=13&w=908&h=995");
+      background-size: cover;
+      position: absolute;
+
+      &:nth-child(1) {
+        left: -10%;
+      }
+
+      &:nth-child(2) {
+        left: 20%;
+      }
+
+      &:nth-child(3) {
+        left: -13%;
+      }
+
+      &:nth-child(4) {
+        left: 12%;
+      }
+
+      &:nth-child(5) {
+        left: 37%;
+      }
+
+      &:nth-child(6) {
+        left: 62%;
+      }
+
+      &:nth-child(7) {
+        left: 87%;
+      }
+
+      &:nth-child(8) {
+        left: 150%;
+      }
+
+      &:nth-child(9) {
+        left: 150%;
+      }
+
+      &:nth-child(10) {
+        left: 150%;
+      }
+
+      &:nth-child(11) {
+        left: 150%;
+      }
+
+
+    }
+
+    &__stick {
+      position: absolute;
+      left: 50%;
+      right: 50%;
+      width: 0.5rem;
+      height: 100%;
+      top: 0;
+      background: rgb(234, 223, 225);
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+      z-index: 5;
+    }
+  }
+
+  .dark-background__roulette {
+    background: linear-gradient(270deg, #000000 -80%, rgba(0, 0, 0, 0.25) 51.56%, rgba(0, 0, 0, 0) 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0.625rem;
+  }
+
+  .roulette-form {
+    position: relative;
+    width: 100%;
+    height: 22.5rem;
+    border-radius: 0.625rem;
+    display: flex;
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .cost-block {
+      margin-top: 20px;
+      margin-bottom: 25px;
+
+      .cost-t {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 34px;
+      }
+
+      .cost-v {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 34px;
+
+        vertical-align: middle;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .old {
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: 200;
+          font-size: 24px;
+          line-height: 28px;
+          text-decoration: line-through;
+
+          color: #FFFFFF;
+          opacity: 0.7;
+
+          padding-right: 15px;
+        }
+      }
+    }
+
+    .users-input {
+      padding-bottom: 20px;
+
+      .form-group {
+        margin-bottom: 1rem;
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+
+      .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .select-wrapper {
+        padding-right: 5px;
+        padding-left: 5px;
+        width: calc(calc(100% / 24) * 6);
+      }
+
+      .button-wrapper {
+        padding-right: 5px;
+        padding-left: 5px;
+        width: calc(calc(100% / 24) * 18);
+      }
+
+      label {
+        width: 100%;
+        font-size: 16px;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+
+        .error {
+          color: red;
+          float: right;
+        }
+      }
+
+      input {
+        color: white;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding: 11px 20px;
+
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+
+        &:focus {
+          outline: none;
+        }
+
+        &.error {
+          border: 1px solid red;
+        }
+      }
+
+      select {
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-sizing: border-box;
+        border-radius: 4px;
+
+        color: white;
+        padding: 10px;
+        width: 100%;
+        font-size: 12px;
+        height: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      button[type="submit"] {
+        background: $premium;
+        border-radius: 4px;
+        width: 100%;
+
+        padding: 16px 0;
+        border: none;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: white;
+        cursor: pointer;
+
+        &.unactive {
+          background: #808080 !important;
+          cursor: default;
+        }
+      }
+    }
+
+    &__form {
+      background: rgba(32, 32, 32, 0.8);
+      border-radius: 0px 10px 10px 0px;
+      width: 30.3125rem;
+      height: 100%;
+      z-index: 1;
+      padding: 1.5625rem 2.1875rem;
+      color: white;
+
+      .overlays-item__form-touch-price {
+        &__value-last {
+          font-weight: 200;
+        }
+      }
+
+      .overlays-item__form-touch__buy-block button {
+        background: linear-gradient(243.71deg, #7A80FF 0%, #716FFF 100%) !important;
+
+        width: 19.25rem;
+
+      }
+
+    }
+    &__img{
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+    &__description{
+      background: rgba(20, 20, 20, 0.8);
+      border-radius: 10px 0px 0px 10px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 39.0265rem;
+      z-index: 2;
+      &__title{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 2rem;
+        line-height: 39px;
+        text-align: center;
+        color: #FFFFFF;
+        margin: 0;
+        margin-bottom: 1.25rem;
+      }
+      &__text{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1rem;
+        text-align: center;
+        color: #FFFFFF;
+        margin: 0;
+        width: 88%;
+        line-height: 1.5rem;
+      }
+    }
+  }
+}
+
+
+
+.case-container{
+  width: 69.375rem;
+  margin: 0 auto;
+}
+
+.overlays-item{
+
+  &__description-title:nth-child(1){
+    display: block;
+  }
+  &__description-title:nth-child(2){
+    display: none;
+  }
+  &__description-title:nth-child(3){
+    display: none;
+  }
+  &__description-title:nth-child(4){
+    display: none;
+  }
+}
+
+
+
+.overlays-item__form-touch-price__value-{
+  &last{
+    &:nth-child(1){
+      display: block;
+    }
+    &:nth-child(2){
+      display: none;
+    }
+    &:nth-child(3){
+      display: none;
+    }
+    &:nth-child(4){
+      display: none;
+    }
+  }
+}
+
+
+
+
 
 
 
