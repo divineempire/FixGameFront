@@ -5,7 +5,7 @@ on: [push, workflow_dispatch]
 env:
   namespace: divine-shops
   image_url: ghcr.io/divineempire/fixgame-shop-front
-  api_url: https://api.fixgame.ru
+  api_url: https://api.fixgame.ru/api
 
   app_name: fixgame-shop-frontend
   host: fixgame.ru
