@@ -59,7 +59,6 @@
                 </div>
             </div>
         </section>
-        <h2 class="products-title">Все товары</h2>
     </div>
 </template>
 

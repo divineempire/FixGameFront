@@ -94,4 +94,40 @@ export default {
     }
   }
 }
+@media ($mobile) {
+  .header {
+    .navigation {
+      padding-top: 10px;
+      display: flex;
+      flex-direction: column;
+
+      &__logo-link {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        margin: 0 150px;
+        text-decoration: none;
+
+        @media ($laptop) {
+          margin: 0;
+          align-items: flex-start;
+          order: -1;
+        }
+      }
+
+      &__home-link, &__youtube-link, &__support-link, &__case-link {
+        padding-top: 10px;
+      }
+
+      &__home-link {
+        margin-right: 0;
+      }
+
+      &__support-link {
+        margin-left: 0;
+      }
+    }
+  }
+}
 </style>
